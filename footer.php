@@ -16,13 +16,93 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <div class="row-1">
             <div class="column-1">
-                <!--events-->
+                <?php $args = array(
+                        'post_type'=>'event',
+                        'posts_per_page' => -1,
+                        'order'=>'ASC',
+                        'orderby'=>'menu_order',
+                        'meta_query'=>array(
+                                array(
+                                    'key'=>'featured',
+                                    'value'=>'featured',
+                                    'compare'=>'LIKE',
+                                ),
+                        ),
+                );
+                $query = new WP_Query($args);
+                if($query->have_posts()):?>
+                    <?php while($query->have_posts()): $query->the_post();?>
+                        <div class="event">
+                            <?php $date = get_field("date");
+                            if($date):
+                                $date_array = explode(",",$date);
+                                if(!empty($date_array)):?>
+                                    <div class="column-1 date">
+                                        <div class="row-1 month">
+                                            <?php echo $date_array[0].".";?>
+                                        </div><!--.row-1-->
+                                        <div class="row-2 day">
+                                            <?php echo $date_array[1];?>
+                                        </div><!--.row-2-->
+                                    </div><!--.column-1-->
+                                <?php endif;
+                            endif;?>
+                            <div class="column-2 title">
+                                <?php the_title();?>
+                            </div><!--.column-2-->
+                        </div><!--.event-->
+                    <?php endwhile;?>
+                <?php endif;?>
             </div><!--.column-1-->
             <div class="column-2">
-                <!--resources-->
+                <?php $resources = get_field("resources_repeater","option");
+                if($resources):
+                    foreach($resources as $resource):
+                        $title = $resource['title'];
+                        if($title && $resource['internal_or_external_link']):?>
+                            <div class="resource">
+                                <?php if(strcmp($resource['internal_or_external_link'],'internal')):
+                                    if($resource['internal_link']):?>
+                                        <a href="<?php echo get_the_permalink($resource['internal_link']);?>">
+                                            <?php echo $title;?>
+                                        </a>
+                                    <?php endif;
+                                else:
+                                    if($resource['external_link']):?>
+                                        <a href="<?php echo $resource['external_link'];?>">
+                                            <?php echo $title;?>
+                                        </a>
+                                    <?php endif;
+                                endif;?>
+                            </div><!--.resource-->
+                        <?php endif;
+                    endforeach;
+                endif;?>
             </div><!--.column-2-->
             <div class="column-3">
-                <!--give-->
+	            <?php $gives = get_field("give_repeater","option");
+	            if($gives):
+                    foreach($gives as $give):
+                        $title = $give['title'];
+                        if($title && $give['internal_or_external_link']):?>
+                            <div class="resource">
+                                <?php if(strcmp($give['internal_or_external_link'],'internal')):
+                                    if($give['internal_link']):?>
+                                        <a href="<?php echo get_the_permalink($give['internal_link']);?>">
+                                            <?php echo $title;?>
+                                        </a>
+                                    <?php endif;
+                                else:
+                                    if($give['external_link']):?>
+                                        <a href="<?php echo $give['external_link'];?>">
+                                            <?php echo $title;?>
+                                        </a>
+                                    <?php endif;
+                                endif;?>
+                            </div><!--.resource-->
+                        <?php endif;
+                    endforeach;
+                endif;?>
             </div><!--.column-3-->
         </div><!--.row-1-->
 		<div class="row-2">
