@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Staff
+ * Template Name: About
  */
 
 get_header("interior"); ?>
