@@ -10,6 +10,23 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-staff" ); ?>>
+    <div class="row-1">
+	    <?php wp_nav_menu( array( 'theme_location' => 'about' ) ); ?>
+    </div><!--.row-1-->
+	<?php $post = get_post(198);
+	setup_postdata($post);
+	$view_bio_text = get_field("view_bio_text");
+	$image = get_field("banner");
+	$title = get_the_title();
+	wp_reset_postdata();
+	if($image):?>
+        <div class="row-2">
+            <img src="<?php echo $image['sizes']['full'];?>" alt="<?php echo $image['alt'];?>">
+        </div><!--.row-2-->
+	<?php endif;?>
+    <div class="row-3">
+        <h1><?php echo $title;?></h1>
+    </div><!--.row-3-->
 	<?php $args    = array(
 		'taxonomy'   => "staff_type",
 		'order'      => 'ASC',
@@ -19,7 +36,7 @@
 	$category_name = get_query_var( "term", null );
 	$terms         = get_terms( $args );
 	if ( ! is_wp_error( $terms ) && is_array( $terms ) && ! empty( $terms ) ): ?>
-        <nav class="staff-cat row-1">
+        <nav class="staff-cat row-4">
             <ul>
 				<?php for ( $i = 0; $i < count( $terms ); $i ++ ):
 					$term = $terms[ $i ]; ?>
@@ -33,7 +50,7 @@
             </ul>
         </nav><!--.staff-cat-->
 	<?php endif;//endif ?>
-	<?php $this_term;
+	<?php $this_term = null;
 	$args = array(
 		'post_type'      => "staff",
 		"posts_per_page" => - 1,
@@ -62,13 +79,9 @@
 				),
 			);
 	endif;
-	$post = get_post(198);
-	setup_postdata($post);
-	$view_bio_text = get_field("view_bio_text");
-	wp_reset_postdata();
 	$query = new WP_Query($args);
 	if($query->have_posts()):?>
-        <div class="staff-wrapper row-2">
+        <div class="staff-wrapper row-5">
             <?php while($query->have_posts()):$query->the_post();?>
                 <div class="staff">
                     <?php $image = get_field("image");
