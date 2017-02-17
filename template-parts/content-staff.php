@@ -62,6 +62,10 @@
 				),
 			);
 	endif;
+	$post = get_post(198);
+	setup_postdata($post);
+	$view_bio_text = get_field("view_bio_text");
+	wp_reset_postdata();
 	$query = new WP_Query($args);
 	if($query->have_posts()):?>
         <div class="staff-wrapper row-2">
@@ -73,7 +77,11 @@
                     $email = get_field("email");?>
                     <div class="row-1">
                         <div class="overlay">
-                            View Bio
+                            <a href="<?php echo get_the_permalink();?>">
+                                <?php if($view_bio_text):
+                                    echo $view_bio_text;
+                                endif;?>
+                            </a>
                         </div><!--.overlay-->
                         <?php if($image):?>
                             <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
@@ -107,5 +115,6 @@
                 </div><!--.staff-->
             <?php endwhile;?>
         </div><!--.staff-wrapper-->
-    <?php endif;?>
+        <?php wp_reset_postdata();
+    endif;?>
 </article><!-- #post-## -->
