@@ -19,7 +19,9 @@
     <div class="content-row row-3">
         <div class="column-1">
             <div class="title">
-                <h1><?php the_title();?></h1>
+                <header>
+                    <h1><?php the_title();?></h1>
+                </header>
             </div><!--.title-->
             <?php if(get_the_content()):?>
                 <div class="copy">
@@ -27,8 +29,7 @@
                 </div><!--.copy-->
             <?php endif;?>
         </div><!--.column-1-->
-        <div class="column-2 staff">
-            <!--.staff-->
+        <div class="column-2">
         </div><!--.column-2-->
     </div><!--.row-3-->
 </article><!-- #post-## -->

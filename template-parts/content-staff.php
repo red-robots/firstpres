@@ -25,7 +25,9 @@
         </div><!--.row-2-->
 	<?php endif;?>
     <div class="row-3">
-        <h1><?php echo $title;?></h1>
+        <header>
+            <h1><?php echo $title;?></h1>
+        </header>
     </div><!--.row-3-->
 	<?php $args    = array(
 		'taxonomy'   => "staff_type",
@@ -56,7 +58,6 @@
 		"posts_per_page" => - 1,
 		"orderby"        => 'menu_order',
 		"order"          => 'ASC',
-		"paged"          => $paged
 	);
 	if ( $category_name !== null && ! empty( $category_name ) ):
 		$this_term         = $category_name;

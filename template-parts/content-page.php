@@ -31,7 +31,9 @@
     <div class="content-row row-3">
         <div class="column-1">
             <div class="title">
-                <h1><?php the_title();?></h1>
+                <header>
+                    <h1><?php the_title();?></h1>
+                </header>
             </div><!--.title-->
             <?php if(get_the_content()):?>
                 <div class="copy">
@@ -39,8 +41,67 @@
                 </div><!--.copy-->
             <?php endif;?>
         </div><!--.column-1-->
-        <div class="column-2 staff">
-            <!--.staff-->
+        <div class="column-2">
+            <?php  $post = get_post(198);
+            setup_postdata($post);
+            $view_bio_text = get_field("view_bio_text");
+            wp_reset_postdata();
+            $args = array(
+	            'post_type'      => "staff",
+	            "posts_per_page" => 4,
+	            "order"          => 'RAND',
+            );
+            $query = new WP_Query($args);
+            if($query->have_posts()):?>
+            <div class="staff-wrapper">
+		        <?php while($query->have_posts()):$query->the_post();?>
+                    <div class="staff">
+				        <?php $image = get_field("image");
+				        $p_title = get_field("professional_title");
+				        $phone = get_field("phone");
+				        $email = get_field("email");?>
+                        <div class="row-1">
+                            <div class="overlay">
+                                <a href="<?php echo get_the_permalink();?>">
+							        <?php if($view_bio_text):
+								        echo $view_bio_text;
+							        endif;?>
+                                </a>
+                            </div><!--.overlay-->
+					        <?php if($image):?>
+                                <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
+					        <?php endif;?>
+                        </div><!--.row-1-->
+                        <div class="row-2">
+                            <h2><?php the_title();?></h2>
+					        <?php if($p_title):?>
+                                <div class="bar"></div>
+                                <div class="p-title">
+							        <?php echo $p_title;?>
+                                </div><!--p-title-->
+					        <?php endif;?>
+                        </div><!--.row-2-->
+                        <div class="row-3">
+					        <?php if($phone):?>
+                                <div class="phone">
+                                    <a href="tel:<?php echo $phone;?>">
+								        <?php echo $phone;?>
+                                    </a>
+                                </div><!--.phone-->
+					        <?php endif;?>
+					        <?php if($email):?>
+                                <div class="email">
+                                    <a href="mailto:<?php echo $email;?>">
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
+                                </div><!--.email-->
+					        <?php endif;?>
+                        </div><!--.row-3-->
+                    </div><!--.staff-->
+		        <?php endwhile;?>
+            </div><!--.staff-wrapper-->
+	        <?php wp_reset_postdata();
+	        endif;?>
         </div><!--.column-2-->
     </div><!--.row-3-->
     <?php if($sections):
