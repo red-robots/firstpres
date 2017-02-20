@@ -145,36 +145,38 @@
                 </div><!--.column-2-->
             </div><!-- .column-1 -->
             <div class="column-2">
-                <div class="facebook">
-		            <?php $facebook=get_field("facebook_link","option");
-		            if($facebook):?>
-                        <a href="<?php echo $facebook;?>"><img src="<?php echo get_template_directory_uri()."/images/social/facebook.png";?>" alt="facebook"></a>
-		            <?php endif;?>
-                </div><!--.facebook-->
-                <div class="twitter">
-		            <?php $twitter=get_field("twitter_link","option");
-		            if($twitter):?>
-                        <a href="<?php echo $twitter;?>"><img src="<?php echo get_template_directory_uri()."/images/social/twitter.png";?>" alt="twitter"></a>
-		            <?php endif;?>
-                </div><!--.twitter-->
-                <div class="instagram">
-		            <?php $instagram=get_field("instagram_link","option");
-		            if($instagram):?>
-                        <a href="<?php echo $instagram;?>"><img src="<?php echo get_template_directory_uri()."/images/social/instagram.png";?>" alt="instagram"></a>
-		            <?php endif;?>
-                </div><!--.instagram-->
-                <div class="linkedin">
-		            <?php $linkedin=get_field("linkedin_link","option");
-		            if($linkedin):?>
-                        <a href="<?php echo $linkedin;?>"><img src="<?php echo get_template_directory_uri()."/images/social/linkedin.png";?>" alt="linkedin"></a>
-		            <?php endif;?>
-                </div><!--.linkedin-->
-                <div class="vimeo">
-		            <?php $vimeo=get_field("vimeo_link","option");
-		            if($vimeo):?>
-                        <a href="<?php echo $vimeo;?>"><img src="<?php echo get_template_directory_uri()."/images/social/vimeo.png";?>" alt="vimeo"></a>
-		            <?php endif;?>
-                </div><!--.vimeo-->
+                <ul>
+                    <li class="facebook">
+                        <?php $facebook=get_field("facebook_link","option");
+                        if($facebook):?>
+                            <a href="<?php echo $facebook;?>"><img src="<?php echo get_template_directory_uri()."/images/social/facebook.png";?>" alt="facebook"></a>
+                        <?php endif;?>
+                    </li><!--.facebook-->
+                    <li class="twitter">
+                        <?php $twitter=get_field("twitter_link","option");
+                        if($twitter):?>
+                            <a href="<?php echo $twitter;?>"><img src="<?php echo get_template_directory_uri()."/images/social/twitter.png";?>" alt="twitter"></a>
+                        <?php endif;?>
+                    </li><!--.twitter-->
+                    <li class="instagram">
+                        <?php $instagram=get_field("instagram_link","option");
+                        if($instagram):?>
+                            <a href="<?php echo $instagram;?>"><img src="<?php echo get_template_directory_uri()."/images/social/instagram.png";?>" alt="instagram"></a>
+                        <?php endif;?>
+                    </li><!--.instagram-->
+                    <li class="linkedin">
+                        <?php $linkedin=get_field("linkedin_link","option");
+                        if($linkedin):?>
+                            <a href="<?php echo $linkedin;?>"><img src="<?php echo get_template_directory_uri()."/images/social/linkedin.png";?>" alt="linkedin"></a>
+                        <?php endif;?>
+                    </li><!--.linkedin-->
+                    <li class="vimeo">
+                        <?php $vimeo=get_field("vimeo_link","option");
+                        if($vimeo):?>
+                            <a href="<?php echo $vimeo;?>"><img src="<?php echo get_template_directory_uri()."/images/social/vimeo.png";?>" alt="vimeo"></a>
+                        <?php endif;?>
+                    </li><!--.vimeo-->
+                </ul>
             </div><!--.column-2-->
 	    </div><!-- .row-2 -->
 	</footer><!-- #colophon -->
