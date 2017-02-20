@@ -1,92 +1,225 @@
-
-div {
-	/* These are technically the same, but use both */
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-
-	-ms-word-break: break-all;
-	/* This is the dangerous one in WebKit, as it breaks things wherever */
-	word-break: break-all;
-	/* Instead use this non-standard one: */
-	word-break: break-word;
-
-	/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-}
-.clear {clear: both;}
-.wrapper {
-	width: 100%;
-	margin: 0px auto;
-	padding: 20px;
-	
-	@media screen and (min-width: $tabwidth) {
-		width: 100%;
-	}
-	@media screen and (min-width: $deskwidth) {
-		width: 1200px;
-		padding: 0px;
-	}
-}
-
-.content-area {
-	width: 100%;
-	margin: 0px auto;
-	
-	@media screen and (min-width: $tabwidth) {
-		width: 66%;
-		float: left;
-		margin: 0;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
-	}
-}
-
-.widget-area {
-	width: 100%;
-	margin: 0px auto;
-	
-	@media screen and (min-width: $tabwidth) {
-		width: 26%;
-		float: right;
-		margin: 0;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
-	}
+.copy {
+  font-size: 15px;
+  > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  p {
+    margin: 10px 0;
+  }
+  strong, b, em {
+    font-weight: 800;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      font-weight: 700;
+    }
+  }
+  h1, h2, h3 {
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 17px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+  ul, ol {
+    padding: 0;
+    margin: 0 0 10px 10px;
+    font-size: inherit;
+    li {
+      margin: 0 0 0 20px;
+      font-size: inherit;
+      padding: 0;
+      list-style-type: square;
+      a {
+      }
+      ul.sub-menu {
+        margin: 0;
+      }
+    }
+  }
 }
 
-/* Logo */
-.logo , h1.logo {
-	width: 300px;
-	height: 200px;
-	background-image: url(images/logo.png);	
-	margin: 10px auto;
-
-	@media screen and (min-width: $tabwidth) {
-		width: 300px;
-		height: 200px;
-		float: left;
-		margin: 0;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
-	}
+.clear {
+  clear: both;
 }
-.logo a, h1.logo a {
-	width: 300px;
-	height: 200px;
-	display: block;
-	text-indent: -9000px;
 
-	@media screen and (min-width: $tabwidth) {
-		width: 300px;
-		height: 200px;
-	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
-	}
+.clear-bottom {
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+#colophon {
+  >.row-1 {
+    width: 95%;
+    margin: 0 auto;
+    @media screen and (min-width: $tabwidth) {
+      width: 90%;
+      margin: 80px auto 30px auto;
+      @include flexbox;
+      @include flexbox-align-content(stretch);
+      @include flexbox-align-items(stretch);
+      @include flexbox-justify(space-between);
+      @include flexbox-wrap(nowrap);
+    }
+    >.column {
+      margin: 20px 0;
+      @include flexbox;
+      @include flexbox-align-content(flex-start);
+      @include flexbox-align-items(flex-start);
+      @include flexbox-justify(center);
+      @include flexbox-wrap(nowrap);
+      @include flexbox-direction(column);
+      @media screen and (min-width: $tabwidth) {
+        width: 30%;
+      }
+      &:first-child {
+        margin: 60px 0 20px 0;
+      }
+      @media screen and (min-width: $tabwidth) {
+        margin: 0;
+        &:first-child {
+          margin: 0;
+        }
+      }
+      >.title {
+        background-color: $color__first-dark-blue;
+        @include flexbox-flex(0,1,auto);
+        width: 100%;
+        h2 {
+          margin: 0;
+          text-align: center;
+          color: white;
+          text-transform: uppercase;
+        }
+      }
+      >.list {
+        @include flexbox-flex(1,1,auto);
+        width: 100%;
+        border-left: 1px solid $color__first-grey;
+        border-right: 1px solid $color__first-grey;
+        border-bottom: 1px solid $color__first-grey;
+        padding: 20px 10px 70px 10px;
+        ul.resources {
+          margin: 0;
+          padding: 0 20px 0 35px;
+          li.resource {
+            margin-bottom: 5px;
+            &:last-child {
+              margin: 0;
+            }
+            a {
+              text-decoration: none;
+              font-size: 14px;
+              text-transform: uppercase;
+              font-weight: 800;
+              color: $color__text-main;
+              @media screen and (min-width: $deskwidth) {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        ul.gives {
+          padding: 0 20px;
+          margin: 0;
+          li.give {
+            margin-bottom: 15px;
+            list-style-type: none;
+            &:last-child {
+              margin: 0;
+            }
+            a {
+              text-decoration: none;
+              font-size: 14px;
+              text-transform: uppercase;
+              font-weight: 800;
+              color: $color__text-main;
+              @media screen and (min-width: $deskwidth) {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        .event {
+          margin: 0 0 20px 0;
+          &:last-child {
+            margin: 0;
+          }
+          a {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: $color__text-main;
+            text-decoration: none;
+            @media screen and (min-width: $deskwidth) {
+              font-size: 14px;
+            }
+            > .column-1 {
+              float: left;
+              width: 40px;
+              @media screen and (min-width: $deskwidth) {
+                width: 70px;
+              }
+              > .row-1 {
+                background-color: $color__first-blue;
+                color: white;
+                text-align: center;
+                font-size: 12px;
+                @media screen and (min-width: $deskwidth) {
+                  font-size: 20px;
+                }
+              }
+              > .row-2 {
+                background-color: $color__first-dark-blue;
+                color: white;
+                text-align: center;
+                font-size: 12px;
+                @media screen and (min-width: $deskwidth) {
+                  font-size: 20px;
+                }
+
+              }
+            }
+            > .column-2 {
+              float: left;
+              width: calc(100% - 40px);
+              padding-left: 5px;
+              @media screen and (min-width: $deskwidth) {
+                width: calc(100% - 70px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  >.row-2 {
+    >.column-1 {
+      >.column-1 {
+
+      }
+      >.column-2 {
+
+      }
+    }
+    >.column-2 {
+
+    }
+  }
 }

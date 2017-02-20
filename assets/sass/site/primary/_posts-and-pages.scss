@@ -1,28 +1,251 @@
-.sticky {
-	display: block;
-}
-
-.hentry {
-	margin: 0 0 1.5em;
-}
-
-.byline,
-.updated:not(.published){
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+.template-index {
+  >.row-1 {
+    position: relative;
+    overflow: hidden;
+    >.overlay {
+      position: absolute;
+      @include translateX(-50%);
+      top: 15px;
+      left: 50%;
+      width: 100%;
+      @media screen and (min-width: $tabwidth) {
+        top: 30px;
+      }
+      >.row-1 {
+        width: 30%;
+        margin: 0 auto;
+        h1 {
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+      >.row-2 {
+        text-align: center;
+        .new {
+          display: inline-block;
+          margin: 0 20px 0 0;
+          background-color: $color__first-blue;
+          a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            @media screen and (min-width: $tabwidth){
+              font-size: 14px;
+            }
+          }
+        }
+        .week {
+          display: inline-block;
+          background-color: $color__first-blue;
+          a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            @media screen and (min-width: $tabwidth){
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    img {
+      width: 120%;
+      max-width: 120%;
+      display: block;
+      @media screen and (min-width: $tabwidth){
+        width: 100%;
+      }
+    }
+  }
+  >.row-2 {
+    width: 95%;
+    margin: 10px auto;
+    @media screen and (min-width: $tabwidth){
+      width: 90%;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        &:first-child {
+          a {
+            &:before {
+              display: none;
+            }
+          }
+        }
+        a {
+          &:before {
+            content: "|";
+            display: inline-block;
+            transform: rotate(25deg);
+            color: $color__first-blue;
+            margin: 0 20px;
+            font-size: 35px;
+            line-height: 1;
+          }
+          color: $color__first-grey;
+          text-decoration: none;
+          font-size: 25px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  >.row-3 {
+    width: 95%;
+    margin: 10px auto;
+    @media screen and (min-width: $tabwidth){
+      width: 90%;
+      @include flexbox;
+      @include flexbox-align-content(stretch);
+      @include flexbox-align-items(stretch);
+      @include flexbox-justify(center);
+      @include flexbox-wrap(nowrap);
+    }
+    >.column-1 {
+      width: 100%;
+      @media screen and (max-width: $tabwidth -1) {
+        background-image: none !important;
+      }
+      @media screen and (min-width: $tabwidth) {
+        width: 50%;
+        background-position: center;
+        background-size: cover;
+        img {
+          display: none !important;
+        }
+      }
+      img {
+        display: block;
+      }
+    }
+    >.column-2 {
+      width: 100%;
+      @media screen and (min-width: $tabwidth) {
+        width: 50%;
+      }
+      >.row-1 {
+        background-color: $color__first-dark-blue;
+        padding: 10px 10px 0 10px;
+        .title {
+          h2 {
+            color: white;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 10px 0 10px 0;
+          }
+        }
+        .copy {
+          color: $color__first-blue;
+          text-transform: uppercase;
+          line-height: 1.8;
+        }
+      }
+      >.row-2 {
+        padding: 20px;
+        background-color: $color__first-blue;
+        color: white;
+        text-transform: uppercase;
+        line-height: 1.8;
+      }
+    }
+  }
+  >.row-4 {
+    width: 95%;
+    margin: 10px auto;
+    @media screen and (min-width: $tabwidth){
+      width: 90%;
+    }
+    >.column {
+      position: relative;
+      @media screen and (min-width: $tabwidth) {
+        width: 25%;
+        float: left;
+      }
+      &:hover {
+        >.overlay {
+          display: block;
+        }
+      }
+      >.overlay {
+        display: none;
+        position: absolute;
+        background-color: rgba(20,90,150,0.8);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        z-index: 2;
+        color: white;
+        padding: 10px;
+        .title {
+          h2 {
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 25px;
+          }
+        }
+        .copy {
+          padding: 0 5px;
+          font-size: 13px;
+        }
+        .more {
+          margin: 30px 0 0 0;
+          padding-bottom: 10px;
+          text-align: right;
+          a {
+            display: inline-block;
+            padding: 10px;
+            color: white;
+            background-color: $color__first-dark-blue;
+            text-decoration: none;
+            text-transform: uppercase;
+          }
+        }
+      }
+      >.row-1 {
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      >.row-2 {
+        background-color: $color__first-dark-blue;
+        position: relative;
+        img {
+          display: block;
+          opacity: 0;
+          width: 100%;
+        }
+        .title {
+          position: absolute;
+          overflow: hidden;
+          top: 50%;
+          left: 50%;
+          @include center(-50%);
+          color: white;
+          font-size: 40px;
+          text-transform: uppercase;
+          @media screen and (min-width: $tabwidth) {
+            font-size: 20px;
+          }
+          @media screen and (min-width: $deskwidth) {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+  }
 }

@@ -17,9 +17,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
             <?php $post = get_post(16);
             setup_postdata($post);
-            if ( have_posts() ) : the_post();
-                get_template_part( 'template-parts/content', 'index' );
-            endif; ?>
+            get_template_part( 'template-parts/content', 'index' ); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php

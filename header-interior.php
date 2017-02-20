@@ -26,8 +26,20 @@
 		<div class="wrapper">
 			<div class="row-1">
                 <div class="new">
+	                <?php $post = get_post(186);
+	                setup_postdata($post);?>
+                    <a href="<?php echo get_the_permalink();?>">
+		                <?php the_title();?>
+                    </a>
+	                <?php wp_reset_postdata();?>
                 </div><!--.new-->
                 <div class="week">
+	                <?php $post = get_post(258);
+	                setup_postdata($post);?>
+                    <a href="<?php echo get_the_permalink();?>">
+		                <?php the_title();?>
+                    </a>
+	                <?php wp_reset_postdata();?>
                 </div><!--.week-->
             </div><!--.row-1-->
 			<?php if(is_home()): ?>
