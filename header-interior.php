@@ -24,7 +24,7 @@
 <div id="page" class="site">
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
-			<div class="row-1">
+			<div class="row-1 clear-bottom">
                 <div class="new">
 	                <?php $post = get_post(186);
 	                setup_postdata($post);?>
@@ -44,16 +44,16 @@
             </div><!--.row-1-->
 			<?php if(is_home()): ?>
 	            <h1 class="logo row-2">
-	            <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.png";?>" alt="<?php bloginfo('name'); ?>"></a>
+	            <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo1.png";?>" alt="<?php bloginfo('name'); ?>"></a>
 	            </h1>
 	        <?php else: ?>
 	            <div class="logo row-2">
-	            <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.png";?>" alt="<?php bloginfo('name'); ?>"></a>
+	            <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo1.png";?>" alt="<?php bloginfo('name'); ?>"></a>
 	            </div><!--.logo .row-2-->
 	        <?php endif; ?>
 
 			<nav id="site-navigation" class="main-navigation row-3" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'acstarter' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'acstarter' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 	    </div><!-- wrapper -->

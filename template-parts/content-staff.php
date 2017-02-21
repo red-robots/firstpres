@@ -21,7 +21,7 @@
 	wp_reset_postdata();
 	if($image):?>
         <div class="row-2">
-            <img src="<?php echo $image['sizes']['full'];?>" alt="<?php echo $image['alt'];?>">
+            <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
         </div><!--.row-2-->
 	<?php endif;?>
     <div class="row-3">

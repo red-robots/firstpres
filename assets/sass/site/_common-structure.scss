@@ -1,5 +1,7 @@
 .copy {
   font-size: 15px;
+  font-family: Hero, serif;
+  font-weight: 800;
   > *:first-child {
     margin-top: 0;
     padding-top: 0;
@@ -16,9 +18,9 @@
   }
   a {
     text-decoration: none;
-    color: black;
+    color: $color__first-blue;
     &:hover {
-      font-weight: 700;
+      color: $color__first-light-blue;
     }
   }
   h1, h2, h3 {
@@ -66,7 +68,7 @@
 
 #colophon {
   padding-bottom: 70px;
-  >.row-1 {
+  > .row-1 {
     width: 95%;
     margin: 0 auto;
     @media screen and (min-width: $tabwidth) {
@@ -78,7 +80,7 @@
       @include flexbox-justify(space-between);
       @include flexbox-wrap(nowrap);
     }
-    >.column {
+    > .column {
       margin: 20px 0;
       @include flexbox;
       @include flexbox-align-content(flex-start);
@@ -98,9 +100,9 @@
           margin: 0;
         }
       }
-      >.title {
+      > .title {
         background-color: $color__first-dark-blue;
-        @include flexbox-flex(0,1,auto);
+        @include flexbox-flex(0, 1, auto);
         width: 100%;
         h2 {
           margin: 0;
@@ -109,8 +111,8 @@
           text-transform: uppercase;
         }
       }
-      >.list {
-        @include flexbox-flex(1,1,auto);
+      > .list {
+        @include flexbox-flex(1, 1, auto);
         width: 100%;
         border-left: 1px solid $color__first-grey;
         border-right: 1px solid $color__first-grey;
@@ -210,7 +212,7 @@
       }
     }
   }
-  >.row-2 {
+  > .row-2 {
     width: 95%;
     margin: 0 auto;
     @media screen and (min-width: $tabwidth) {
@@ -221,7 +223,7 @@
       @include flexbox-justify(space-between);
       @include flexbox-wrap(nowrap);
     }
-    >.column-1 {
+    > .column-1 {
       @media screen and (min-width: $tabwidth) {
         @include flexbox;
         @include flexbox-align-content(flex-end);
@@ -229,7 +231,7 @@
         @include flexbox-justify(center);
         @include flexbox-wrap(nowrap);
       }
-      >.column-1 {
+      > .column-1 {
         margin: 20px 0;
         @media screen and (min-width: $tabwidth) {
           width: 156px;
@@ -239,7 +241,7 @@
           width: 100%;
         }
       }
-      >.column-2 {
+      > .column-2 {
         margin: 20px 0;
         text-align: center;
         color: $color__first-blue;
@@ -253,7 +255,7 @@
         }
       }
     }
-    >.column-2 {
+    > .column-2 {
       text-align: center;
       margin: 20px 0 0 0;
       @media screen and (min-width: $tabwidth) {
@@ -267,6 +269,151 @@
           padding: 0;
           list-style-type: none;
           display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+#masthead {
+  > .wrapper {
+    > .row-1 {
+      width: 95%;
+      margin: 0 auto 10px auto;
+      text-align: center;
+      @media screen and (min-width: $tabwidth) {
+        width: 90%;
+        margin: 0 auto;
+      }
+      .new {
+        display: inline-block;
+        margin: 0 20px 0 0;
+        background-color: $color__first-blue;
+        width: 90px;
+        text-align: center;
+        @media screen and (min-width: $tabwidth) {
+          float: left;
+          width: auto;
+        }
+        a {
+          display: block;
+          color: white;
+          padding: 10px;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 12px;
+          @media screen and (min-width: $tabwidth) {
+            font-size: 14px;
+          }
+        }
+      }
+      .week {
+        display: inline-block;
+        background-color: $color__first-blue;
+        width: 90px;
+        text-align: center;
+        @media screen and (min-width: $tabwidth) {
+          float: right;
+          width: auto;
+        }
+        a {
+          display: block;
+          color: white;
+          padding: 10px;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 12px;
+          @media screen and (min-width: $tabwidth) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    > .row-2 {
+      width: 95%;
+      margin: 0 auto;
+      text-align: center;
+      @media screen and (min-width: $tabwidth) {
+        width: 90%;
+      }
+      a {
+        margin: 0 0 10px 0;
+        display: inline-block;
+        width: 50%;
+        @media screen and (min-width: $tabwidth) {
+          width: 15%;
+          margin: -20px 0 30px 0;
+        }
+        @media screen and (min-width: $deskwidth) {
+          width: 10%;
+        }
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+    > .row-3 {
+      width: 95%;
+      margin: 10px auto;
+      @media screen and (min-width: $tabwidth) {
+        width: 90%;
+      }
+      > button {
+        display: block;
+        margin: 0 auto 20px auto;
+        box-shadow: none;
+        text-shadow: none;
+        background-color: $color__first-blue;
+        color: white;
+        font-size: 18px;
+        padding: 10px;
+        @media screen and (min-width: $tabwidth) {
+          display: none;
+        }
+      }
+      ul#primary-menu {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        display: none;
+        &.toggled {
+          display: block;
+        }
+        @media screen and (min-width: $tabwidth) {
+          display: block;
+        }
+        li {
+          text-align: center;
+          list-style-type: none;
+          @media screen and (min-width: $tabwidth) {
+            display: inline-block;
+          }
+          &:first-child {
+            a {
+              &:before {
+                display: none;
+              }
+            }
+          }
+          a {
+            &:before {
+              display: none;
+              @media screen and (min-width: $tabwidth) {
+                content: "|";
+                display: inline-block;
+                transform: rotate(25deg);
+                color: $color__first-blue;
+                margin: 0 20px;
+                font-size: 35px;
+                line-height: 1;
+              }
+            }
+            color: $color__first-grey;
+            text-decoration: none;
+            font-size: 25px;
+            text-transform: uppercase;
+          }
         }
       }
     }

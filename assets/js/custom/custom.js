@@ -81,4 +81,16 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
 	new WOW().init();
 
+	$('button.menu-toggle').click(function(){
+	    var $primary_menu = $('#primary-menu');
+	    var $sub_menu = $('#sub-menu');
+	    if($primary_menu.hasClass('toggled')){
+            $primary_menu.removeClass('toggled');
+            $sub_menu.removeClass('toggled');
+        } else {
+            $primary_menu.addClass('toggled');
+            $sub_menu.addClass('toggled');
+        }
+    });
+
 });// END #####################################    END

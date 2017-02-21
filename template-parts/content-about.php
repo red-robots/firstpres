@@ -13,7 +13,7 @@
     <?php $image = get_field("banner");
     if($image):?>
         <div class="row-2">
-            <img src="<?php echo $image['sizes']['full'];?>" alt="<?php echo $image['alt'];?>">
+            <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
         </div><!--.row-2-->
     <?php endif;?>
     <div class="content-row row-3">

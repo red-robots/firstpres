@@ -36,6 +36,7 @@
         <img src="<?php echo get_template_directory_uri()."/images/homebanner.jpg";?>" alt="charlotte skyline">
     </div><!--.row-1-->
     <div class="row-2">
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'acstarter' ); ?></button>
 	    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </div><!--.row-2-->
     <div class="row-3">
