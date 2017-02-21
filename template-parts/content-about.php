@@ -8,7 +8,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-about"); ?>>
     <div class="row-1">
-	    <?php wp_nav_menu( array( 'theme_location' => 'about' ) ); ?>
+	    <?php wp_nav_menu( array( 'theme_location' => 'about', 'menu_id' => 'sub-menu' ) ); ?>
     </div><!--.row-1-->
     <?php $image = get_field("banner");
     if($image):?>
@@ -16,7 +16,7 @@
             <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
         </div><!--.row-2-->
     <?php endif;?>
-    <div class="content-row row-3">
+    <div class="row-3">
         <div class="column-1">
             <div class="title">
                 <header>

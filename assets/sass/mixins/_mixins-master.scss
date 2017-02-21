@@ -66,8 +66,8 @@
   -ms-transform: translateX($value);
   transform: translateX($value);
 }
-@mixin center($value){
-  -webkit-transform: translateX($value) translateY($value);
-  -ms-transform: translateX($value) translateY($value);
-  transform: translateX($value) translateY($value);
+@mixin center{
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
