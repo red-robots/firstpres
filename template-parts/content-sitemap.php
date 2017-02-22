@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-sitemap"); ?>>
-    <div class="content-row row-1">
+    <div class="sitemap-404-row-1 clear-bottom">
         <div class="column-1">
             <div class="title">
                 <header>
@@ -20,6 +20,7 @@
             </div><!--.copy-->
         </div><!--.column-1-->
         <div class="column-2">
+	        <?php get_sidebar('staff');?>
         </div><!--.column-2-->
     </div><!--.row-1-->
 </article><!-- #post-## -->

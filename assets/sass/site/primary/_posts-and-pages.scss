@@ -306,7 +306,7 @@
     }
   }
 }
-.template-page, .template-about {
+.template-page, .template-about, .template-sitemap, .error-404 {
   > .row-1 {
     padding: 10px 0;
     background-color: $color__first-dark-blue;
@@ -367,7 +367,7 @@
       display: block;
     }
   }
-  > .row-3 {
+  > .row-3, >.sitemap-404-row-1 {
     width: 95%;
     margin: 20px auto 0 auto;
     @media screen and (min-width: $tabwidth) {
