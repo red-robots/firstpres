@@ -26,7 +26,7 @@
         .new {
           display: inline-block;
           margin: 0 20px 0 0;
-          width: 90px;
+          width: 100px;
           text-align: center;
           background-color: $color__first-blue;
           @media screen and (min-width: $tabwidth){
@@ -38,16 +38,18 @@
             padding: 10px;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 12px;
+            font-size: 14px;
+            font-family: Elkwood, serif;
+            letter-spacing: 2px;
             @media screen and (min-width: $tabwidth){
-              font-size: 14px;
+              font-size: 16px;
             }
           }
         }
         .week {
           display: inline-block;
           background-color: $color__first-blue;
-          width: 90px;
+          width: 100px;
           text-align: center;
           @media screen and (min-width: $tabwidth){
             width: auto;
@@ -58,9 +60,11 @@
             padding: 10px;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 12px;
+            font-size: 14px;
+            font-family: Elkwood, serif;
+            letter-spacing: 2px;
             @media screen and (min-width: $tabwidth){
-              font-size: 14px;
+              font-size: 16px;
             }
           }
         }
@@ -135,6 +139,8 @@
           text-decoration: none;
           font-size: 25px;
           text-transform: uppercase;
+          font-family: Elkwood, serif;
+          letter-spacing: 1px;
         }
       }
     }
@@ -181,12 +187,16 @@
             text-transform: uppercase;
             margin: 0;
             padding: 10px 0 10px 0;
+            font-family: DIN, serif;
           }
         }
         .copy {
           color: $color__first-blue;
           text-transform: uppercase;
-          line-height: 1.8;
+          line-height: 1.5;
+          font-family: Elkwood, serif;
+          letter-spacing: 2px;
+          font-size: 18px;
         }
       }
       >.row-2 {
@@ -195,6 +205,9 @@
         color: white;
         text-transform: uppercase;
         line-height: 1.8;
+        font-family: Elkwood, serif;
+        letter-spacing: 2px;
+        font-size: 18px;
       }
     }
   }
@@ -231,12 +244,14 @@
           h2 {
             text-transform: uppercase;
             margin: 0;
-            font-size: 25px;
+            font-size: 35px;
+            font-family: DIN, serif;
           }
         }
         .copy {
           padding: 0 5px;
           font-size: 13px;
+          font-family: Elkwood, serif;
         }
         .more {
           margin: 30px 0 0 0;
@@ -244,11 +259,15 @@
           text-align: right;
           a {
             display: inline-block;
-            padding: 10px;
+            padding: 10px 20px;
             color: white;
             background-color: $color__first-dark-blue;
             text-decoration: none;
             text-transform: uppercase;
+            font-family: Elkwood, serif;
+            font-size: 25px;
+            line-height: 1;
+            letter-spacing: 4px;
           }
         }
       }
@@ -275,6 +294,7 @@
           color: white;
           font-size: 40px;
           text-transform: uppercase;
+          font-family: DIN, serif;
           @media screen and (min-width: $tabwidth) {
             font-size: 20px;
           }
@@ -334,24 +354,26 @@
           text-decoration: none;
           font-size: 20px;
           text-transform: uppercase;
+          font-family: Elkwood, serif;
+          letter-spacing: 1px;
         }
       }
     }
   }
-  >.row-2 {
+  > .row-2 {
     margin-bottom: 5%;
     img {
       width: 100%;
       display: block;
     }
   }
-  >.row-3 {
+  > .row-3 {
     width: 95%;
     margin: 20px auto 0 auto;
-    @media screen and (min-width: $tabwidth){
+    @media screen and (min-width: $tabwidth) {
       width: 90%;
     }
-    >.column-1 {
+    > .column-1 {
       width: 100%;
       @media screen and (min-width: $tabwidth) {
         width: 60%;
@@ -372,7 +394,7 @@
 
       }
     }
-    >.column-2 {
+    > .column-2 {
       width: 100%;
       margin: 10px 0;
       @media screen and (min-width: $tabwidth) {
@@ -380,7 +402,7 @@
         margin: 0 0 0 4.5%;
         float: left;
       }
-      >.title {
+      > .title {
         h2 {
           margin: 0;
           text-transform: uppercase;
@@ -389,39 +411,59 @@
       }
       .staff-wrapper {
         width: 100%;
+        @media screen and (min-width: $tabwidth) {
+          @include flexbox;
+          @include flexbox-align-content(stretch);
+          @include flexbox-align-items(stretch);
+          @include flexbox-justify(flex-start);
+          @include flexbox-wrap(wrap);
+        }
         .staff {
           width: 100%;
           margin: 0 0 20px 0;
           @media screen and (min-width: $tabwidth) {
-            float: left;
-            width: calc(50% - 10px);
+            width: 100%;
+            border-bottom: 10px solid white;
+            @include flexbox;
+            @include flexbox-align-content(stretch);
+            @include flexbox-align-items(stretch);
+            @include flexbox-justify(flex-start);
+            @include flexbox-wrap(nowrap);
+            @include flexbox-direction(column);
+            margin: 0;
+          }
+          @media screen and (min-width: $deskwidth) {
+            width: calc(50% - 5px);
             &:nth-child(odd) {
-              margin: 0 20px 20px 0;
-            }
-            &:nth-child(even) {
-              margin: 0 0 20px 0;
+              margin: 0 10px 0 0;
             }
           }
           &:hover {
-            >.row-1 {
-              >.overlay {
+            > .row-1 {
+              > .overlay {
                 display: block;
               }
             }
-            >.row-2 {
+            > .row-2 {
               background-color: $color__first-dark-blue;
               color: white;
-              >.bar {
+              > .bar {
                 border: 1px solid white;
               }
             }
-            >.row-3 {
+            > .row-3 {
               background-color: $color__first-dark-blue;
+              >.wrapper {
+                background-color: $color__first-dark-blue;
+              }
             }
           }
-          >.row-1 {
+          > .row-1 {
             position: relative;
-            >.overlay {
+            @media screen and (min-width: $tabwidth) {
+              @include flexbox-flex(0,1,auto);
+            }
+            > .overlay {
               display: none;
               position: absolute;
               top: 0;
@@ -453,11 +495,18 @@
               width: 100%;
             }
           }
-          >.row-2 {
+          > .row-2 {
             text-align: center;
             padding: 10px;
+            @media screen and (min-width: $tabwidth) {
+              @include flexbox-flex(1,1,auto);
+            }
             h3 {
               margin: 0;
+              font-size: 18px;
+              @media screen and (min-width: $tabwidth) {
+                font-size: 15px;
+              }
             }
             .bar {
               width: 50%;
@@ -466,33 +515,42 @@
               margin: 0 auto;
             }
             .p-title {
-              font-size: 14px;
+              font-size: 16px;
               font-family: Elkwood, sans-serif;
+              @media screen and (min-width: $tabwidth) {
+                font-size: 14px;
+              }
             }
           }
-          >.row-3 {
-            background-color: $color__first-grey;
-            color: white;
-            padding: 5px;
-            .phone {
-              float: left;
-              a {
-                color: inherit;
-                text-decoration: none;
+          > .row-3 {
+              background-color: $color__first-grey;
+              width: 100%;
+              color: white;
+              padding: 5px;
+              @media screen and (min-width: $tabwidth) {
+                @include flexbox-flex(0, 1, auto);
               }
-            }
-            .email {
-              float: right;
-              a {
-                color: inherit;
-                text-decoration: none;
+              .phone {
+                float: left;
+                a {
+                  color: inherit;
+                  text-decoration: none;
+                }
               }
-            }
+              .email {
+                float: right;
+                a {
+                  color: inherit;
+                  text-decoration: none;
+                }
+              }
           }
         }
       }
     }
   }
+}
+.template-page {
   .content-row {
     width: 95%;
     margin: 0 auto;
@@ -528,6 +586,263 @@
       img {
         width: 100%;
         display: block;
+      }
+    }
+  }
+}
+.template-staff {
+  > .row-1 {
+    padding: 10px 0;
+    background-color: $color__first-dark-blue;
+    ul#sub-menu {
+      width: 95%;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+      display: none;
+      @media screen and (min-width: $tabwidth) {
+        width: 90%;
+      }
+      &.toggled {
+        display: block;
+      }
+      @media screen and (min-width: $tabwidth) {
+        display: block;
+      }
+      li {
+        text-align: center;
+        list-style-type: none;
+        @media screen and (min-width: $tabwidth) {
+          display: inline-block;
+        }
+        &:first-child {
+          a {
+            &:before {
+              display: none;
+            }
+          }
+        }
+        a {
+          &:before {
+            display: none;
+            @media screen and (min-width: $tabwidth) {
+              content: "|";
+              display: inline-block;
+              color: white;
+              margin: 0 20px;
+              font-size: 30px;
+              line-height: 1;
+            }
+          }
+          color: white;
+          text-decoration: none;
+          font-size: 20px;
+          text-transform: uppercase;
+          font-family: Elkwood, serif;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+  > .row-2 {
+    margin-bottom: 5%;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  > .row-3 {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0;
+    @media screen and (min-width: $tabwidth) {
+      width: 90%;
+    }
+    color: $color__first-light-blue;
+  }
+  >.row-4 {
+    background-color: $color__first-dark-blue;
+    ul {
+      width: 95%;
+      margin: 0 auto;
+      padding: 10px 0;
+      text-align: center;
+      @media screen and (min-width: $tabwidth) {
+        width: 90%;
+        padding: 0;
+      }
+      li {
+        text-align: center;
+        list-style-type: none;
+        @media screen and (min-width: $tabwidth) {
+          display: inline-block;
+        }
+        a {
+          color: white;
+          margin: 0;
+          text-decoration: none;
+          font-size: 20px;
+          padding: 0 20px;
+          display: inline-block;
+          text-transform: uppercase;
+          font-family: Elkwood, serif;
+          letter-spacing: 1px;
+          @media screen and (min-width: $tabwidth) {
+            padding: 10px 20px;
+            &.active {
+              background-color: white;
+              color: $color__first-dark-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+  > .staff-wrapper.row-5 {
+    width: 95%;
+    margin: 5% auto 0 auto;
+    padding: 0;
+    text-align: center;
+    @media screen and (min-width: $tabwidth) {
+      width: 90%;
+      @include flexbox;
+      @include flexbox-align-content(stretch);
+      @include flexbox-align-items(stretch);
+      @include flexbox-justify(flex-start);
+      @include flexbox-wrap(wrap);
+    }
+    .staff {
+      width: 100%;
+      margin: 0 0 20px 0;
+      @media screen and (min-width: $tabwidth) {
+        width: calc(100%/3 - 20px/3);
+        margin: 0 10px 0 0;
+        border-bottom: 10px solid white;
+        @include flexbox;
+        @include flexbox-align-content(stretch);
+        @include flexbox-align-items(stretch);
+        @include flexbox-justify(flex-start);
+        @include flexbox-wrap(nowrap);
+        @include flexbox-direction(column);
+        &.count-2 {
+          margin-right: 0;
+        }
+      }
+      @media screen and (min-width: $deskwidth) {
+        width: calc(20% - 50px/4);
+        &.count-2 {
+          margin-right: 10px;
+        }
+        &.count-4 {
+          margin-right: 0;
+        }
+      }
+      &:hover {
+        > .row-1 {
+          > .overlay {
+            display: block;
+          }
+        }
+        > .row-2 {
+          background-color: $color__first-dark-blue;
+          color: white;
+          > .bar {
+            border: 1px solid white;
+          }
+        }
+        > .row-3 {
+          background-color: $color__first-dark-blue;
+          >.wrapper {
+            background-color: $color__first-dark-blue;
+          }
+        }
+      }
+      > .row-1 {
+        position: relative;
+        @media screen and (min-width: $tabwidth) {
+          @include flexbox-flex(0,1,auto);
+        }
+        > .overlay {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $color__first-blue-overlay;
+          z-index: 2;
+          a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            span {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              @include center;
+              color: white;
+              text-decoration: none;
+              text-transform: uppercase;
+            }
+          }
+        }
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      > .row-2 {
+        text-align: center;
+        padding: 10px;
+        @media screen and (min-width: $tabwidth) {
+          @include flexbox-flex(1,1,auto);
+        }
+        h2 {
+          margin: 0;
+          font-size: 18px;
+          @media screen and (min-width: $tabwidth) {
+            font-size: 15px;
+          }
+        }
+        .bar {
+          width: 50%;
+          border: 1px solid $color__first-dark-blue;
+          border-radius: 1px;
+          margin: 0 auto;
+        }
+        .p-title {
+          font-size: 16px;
+          font-family: Elkwood, sans-serif;
+          @media screen and (min-width: $tabwidth) {
+            font-size: 14px;
+          }
+        }
+      }
+      > .row-3 {
+          background-color: $color__first-grey;
+          width: 100%;
+          color: white;
+          padding: 5px;
+          @media screen and (min-width: $tabwidth) {
+            @include flexbox-flex(0, 1, auto);
+          }
+          .phone {
+            float: left;
+            a {
+              color: inherit;
+              text-decoration: none;
+            }
+          }
+          .email {
+            float: right;
+            a {
+              color: inherit;
+              text-decoration: none;
+            }
+          }
       }
     }
   }

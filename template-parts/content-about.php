@@ -16,7 +16,7 @@
             <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
         </div><!--.row-2-->
     <?php endif;?>
-    <div class="row-3">
+    <div class="row-3 clear-bottom">
         <div class="column-1">
             <div class="title">
                 <header>
@@ -30,6 +30,7 @@
             <?php endif;?>
         </div><!--.column-1-->
         <div class="column-2">
+	        <?php get_sidebar('staff');?>
         </div><!--.column-2-->
     </div><!--.row-3-->
 </article><!-- #post-## -->

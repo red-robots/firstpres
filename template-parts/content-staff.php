@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-staff" ); ?>>
     <div class="row-1">
-	    <?php wp_nav_menu( array( 'theme_location' => 'about' ) ); ?>
+	    <?php wp_nav_menu( array( 'theme_location' => 'about', 'menu_id' => 'sub-menu' ) ); ?>
     </div><!--.row-1-->
 	<?php $post = get_post(198);
 	setup_postdata($post);
@@ -83,8 +83,9 @@
 	$query = new WP_Query($args);
 	if($query->have_posts()):?>
         <div class="staff-wrapper row-5">
-            <?php while($query->have_posts()):$query->the_post();?>
-                <div class="staff">
+            <?php $count = 0;
+            while($query->have_posts()):$query->the_post();?>
+                <div class="staff count-<?php echo $count;?>">
                     <?php $image = get_field("image");
                     $p_title = get_field("professional_title");
                     $phone = get_field("phone");
@@ -92,9 +93,9 @@
                     <div class="row-1">
                         <div class="overlay">
                             <a href="<?php echo get_the_permalink();?>">
-                                <?php if($view_bio_text):
-                                    echo $view_bio_text;
-                                endif;?>
+                                <?php if($view_bio_text):?>
+                                    <span><?php echo $view_bio_text;?></span>
+                                <?php endif;?>
                             </a>
                         </div><!--.overlay-->
                         <?php if($image):?>
@@ -110,24 +111,25 @@
                             </div><!--p-title-->
                         <?php endif;?>
                     </div><!--.row-2-->
-                    <div class="row-3">
-                        <?php if($phone):?>
-                            <div class="phone">
-                                <a href="tel:<?php echo $phone;?>">
-                                    <?php echo $phone;?>
-                                </a>
-                            </div><!--.phone-->
-                        <?php endif;?>
-                        <?php if($email):?>
-                            <div class="email">
-                                <a href="mailto:<?php echo $email;?>">
-                                    <i class="fa fa-envelope"></i>
-                                </a>
-                            </div><!--.email-->
-                        <?php endif;?>
+                    <div class="row-3 clear-bottom">
+                            <?php if($phone):?>
+                                <div class="phone">
+                                    <a href="tel:<?php echo $phone;?>">
+                                        <?php echo $phone;?>
+                                    </a>
+                                </div><!--.phone-->
+                            <?php endif;?>
+                            <?php if($email):?>
+                                <div class="email">
+                                    <a href="mailto:<?php echo $email;?>">
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
+                                </div><!--.email-->
+                            <?php endif;?>
                     </div><!--.row-3-->
                 </div><!--.staff-->
-            <?php endwhile;?>
+                <?php $count++;
+            endwhile;?>
         </div><!--.staff-wrapper-->
         <?php wp_reset_postdata();
     endif;?>

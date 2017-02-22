@@ -81,7 +81,7 @@ Custom Taxonomies     */
 add_action( 'init', 'build_taxonomies', 0 );
 
 function build_taxonomies() {
-// cusotm tax
+// custom tax
 	register_taxonomy( 'staff_type', 'staff',
 		array(
 			'hierarchical' => true, // true = acts like categories false = acts like tags
