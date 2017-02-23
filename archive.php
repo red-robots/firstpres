@@ -7,45 +7,50 @@
  * @package ACStarter
  */
 
-get_header(); ?>
-
+get_header("interior"); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
+            <?php if(have_posts()):?>
+                <section <?php post_class("template-archive"); ?>>
+                    <div class="row-2 clear-bottom">
+                        <div class="column-1">
+                            <div class="title">
+                                <header>
+                                    <h1>Archive</h1>
+                                    <?php echo the_archive_title( '<h2>', '</h2>' );?>
+                                </header><!-- .page-header -->
+                            </div><!--.title-->
+                            <div class="posts">
+                                <?php while(have_posts()):the_post();?>
+                                    <div class="post">
+                                        <div class="title">
+                                            <header>
+                                                <h2>
+                                                    <a href="<?php echo get_the_permalink();?>">
+                                                        <?php the_title();?>
+                                                    </a>
+                                                </h2>
+                                            </header>
+                                        </div><!--.title-->
+                                        <div class="date">
+                                            <?php echo the_date();?>
+                                        </div><!--.date-->
+	                                    <?php if(get_the_content()):?>
+                                            <div class="copy">
+			                                    <?php the_content('. . . <span class="read-more">Read More</span>');?>
+                                            </div><!--.copy-->
+	                                    <?php endif;?>
+                                    </div><!--.post-->
+                                <?php endwhile;?>
+                            </div><!--.posts-->
+                        </div><!--.column-1-->
+                        <div class="column-2">
+                            <?php get_sidebar('archive');?>
+                        </div><!--.column-2-->
+                    </div><!--.row-3-->
+                </section><!-- #post-## -->
+            <?php endif;?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php
-get_sidebar();
 get_footer();

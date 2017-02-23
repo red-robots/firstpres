@@ -901,3 +901,82 @@
     }
   }
 }
+.template-single, .template-archive {
+  > .row-1 {
+    margin-bottom: 5%;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  >.row-2 {
+    width: 95%;
+    margin: 20px auto 0 auto;
+    @media screen and (min-width: $tabwidth) {
+      width: 90%;
+    }
+    > .column-1 {
+      width: 100%;
+      @media screen and (min-width: $tabwidth) {
+        width: 70%;
+        float: left;
+      }
+      .title {
+        margin: 0 0 15px 0;
+        header {
+          h1 {
+            margin: 0;
+            text-transform: uppercase;
+            color: $color__first-light-blue;
+          }
+          h2 {
+            font-size: 20px;
+            margin: 0;
+          }
+        }
+      }
+      > .copy {
+        margin: 15px 0 0 0;
+      }
+      >.posts {
+        >.post {
+          margin: 30px 0 0 0;
+          &:first-child {
+            margin: 0;
+          }
+          .title {
+            h2 {
+              margin: 0;
+              text-transform: uppercase;
+              font-size: 25px;
+              a {
+                color: $color__first-dark-blue;
+                text-decoration: none;
+                &:hover {
+                  color: $color__first-light-blue;
+                }
+              }
+            }
+          }
+          .date {
+            margin: 15px 0 0 0;
+            font-family: Hero, serif;
+            font-weight: 800;
+          }
+          .copy {
+            margin: 15px 0 0 0;
+          }
+        }
+      }
+    }
+    > .column-2 {
+      width: 100%;
+      margin: 10px 0;
+      @media screen and (min-width: $tabwidth) {
+        width: 25.5%;
+        margin: 0 0 0 4.5%;
+        float: left;
+      }
+    }
+  }
+}
