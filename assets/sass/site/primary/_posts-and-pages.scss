@@ -460,6 +460,7 @@
           }
           > .row-1 {
             position: relative;
+            min-height: 50px;
             @media screen and (min-width: $tabwidth) {
               @include flexbox-flex(0,1,auto);
             }
@@ -553,7 +554,7 @@
     }
   }
 }
-.template-page {
+.template-page, .template-about {
   .content-row {
     width: 95%;
     margin: 0 auto;
@@ -762,6 +763,7 @@
       }
       > .row-1 {
         position: relative;
+        min-height: 50px;
         @media screen and (min-width: $tabwidth) {
           @include flexbox-flex(0,1,auto);
         }

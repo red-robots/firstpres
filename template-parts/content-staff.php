@@ -10,16 +10,37 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( "template-staff" ); ?>>
-    <div class="row-1">
-	    <?php wp_nav_menu( array( 'theme_location' => 'about', 'menu_id' => 'sub-menu' ) ); ?>
-    </div><!--.row-1-->
-	<?php $post = get_post(198);
-	setup_postdata($post);
+	<?php if(get_the_ID() !== 198):
+		$post = get_post(198);
+		setup_postdata($post);
+	endif;
 	$view_bio_text = get_field("view_bio_text");
 	$image = get_field("banner");
 	$title = get_the_title();
+	$link = get_the_permalink();
+	if(get_the_ID() !== 198):
+		wp_reset_postdata();
+	endif;
+	$post = get_post(13);
+	setup_postdata($post);
+	$sections = get_field("sections");
+	$sub_menu_link = get_the_permalink();
 	wp_reset_postdata();
-	if($image):?>
+	if($sections):?>
+        <div class="row-1">
+            <ul id="sub-menu">
+				<?php foreach($sections as $section):
+					if($section['menu_title']):?>
+                        <li><a href="<?php echo $sub_menu_link.'#'.$section['menu_title'];?>"><?php echo $section['menu_title'];?></a></li>
+					<?php endif;
+				endforeach;?>
+                <li>
+                    <a href="<?php echo $link;?>"><?php echo $title;?></a>
+                </li>
+            </ul>
+        </div><!--.row-1-->
+	<?php endif;?>
+	<?php if($image):?>
         <div class="row-2">
             <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
         </div><!--.row-2-->
