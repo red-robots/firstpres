@@ -1665,25 +1665,33 @@ html[xmlns] .flexslider .slides{display:block}
 .template-staff>.staff-wrapper.row-5 .staff>.row-3 .email{float:right}
 .template-staff>.staff-wrapper.row-5 .staff>.row-3 .email a{color:inherit;text-decoration:none}
 .template-staff>.staff-wrapper.row-5 .staff>.hidden{display:none}
-.template-single>.row-1,.template-archive>.row-1{margin-bottom:5%}
-.template-single>.row-1 img,.template-archive>.row-1 img{width:100%;display:block}
-.template-single>.row-2,.template-archive>.row-2{width:95%;margin:20px auto 0 auto}
-@media screen and (min-width:600px){.template-single>.row-2,.template-archive>.row-2{width:90%}
-}.template-single>.row-2>.column-1,.template-archive>.row-2>.column-1{width:100%}
-@media screen and (min-width:600px){.template-single>.row-2>.column-1,.template-archive>.row-2>.column-1{width:70%;float:left}
-}.template-single>.row-2>.column-1 .title,.template-archive>.row-2>.column-1 .title{margin:0 0 15px 0}
-.template-single>.row-2>.column-1 .title header h1,.template-archive>.row-2>.column-1 .title header h1{margin:0;text-transform:uppercase;color:#5383c5}
-.template-single>.row-2>.column-1 .title header h2,.template-archive>.row-2>.column-1 .title header h2{font-size:20px;margin:0}
-.template-single>.row-2>.column-1>.copy,.template-archive>.row-2>.column-1>.copy{margin:15px 0 0 0}
-.template-single>.row-2>.column-1>.posts>.post,.template-archive>.row-2>.column-1>.posts>.post{margin:30px 0 0 0}
-.template-single>.row-2>.column-1>.posts>.post:first-child,.template-archive>.row-2>.column-1>.posts>.post:first-child{margin:0}
-.template-single>.row-2>.column-1>.posts>.post .title h2,.template-archive>.row-2>.column-1>.posts>.post .title h2{margin:0;text-transform:uppercase;font-size:25px}
-.template-single>.row-2>.column-1>.posts>.post .title h2 a,.template-archive>.row-2>.column-1>.posts>.post .title h2 a{color:#05264d;text-decoration:none}
-.template-single>.row-2>.column-1>.posts>.post .title h2 a:hover,.template-archive>.row-2>.column-1>.posts>.post .title h2 a:hover{color:#5383c5}
-.template-single>.row-2>.column-1>.posts>.post .date,.template-archive>.row-2>.column-1>.posts>.post .date{margin:15px 0 0 0;font-family:Hero,serif;font-weight:800}
-.template-single>.row-2>.column-1>.posts>.post .copy,.template-archive>.row-2>.column-1>.posts>.post .copy{margin:15px 0 0 0}
-.template-single>.row-2>.column-2,.template-archive>.row-2>.column-2{width:100%;margin:10px 0}
-@media screen and (min-width:600px){.template-single>.row-2>.column-2,.template-archive>.row-2>.column-2{width:25.5%;margin:0 0 0 4.5%;float:left}
+.template-single>.row-1,.template-archive>.row-1,.template-live>.row-1{margin-bottom:5%}
+.template-single>.row-1 img,.template-archive>.row-1 img,.template-live>.row-1 img{width:100%;display:block}
+.template-single>.row-2,.template-archive>.row-2,.template-live>.row-2{width:95%;margin:20px auto 0 auto}
+@media screen and (min-width:600px){.template-single>.row-2,.template-archive>.row-2,.template-live>.row-2{width:90%}
+}.template-single>.row-2>.column-1,.template-archive>.row-2>.column-1,.template-live>.row-2>.column-1{width:100%}
+@media screen and (min-width:600px){.template-single>.row-2>.column-1,.template-archive>.row-2>.column-1,.template-live>.row-2>.column-1{width:70%;float:left}
+}.template-single>.row-2>.column-1 .title,.template-archive>.row-2>.column-1 .title,.template-live>.row-2>.column-1 .title{margin:0 0 15px 0}
+.template-single>.row-2>.column-1 .title header h1,.template-archive>.row-2>.column-1 .title header h1,.template-live>.row-2>.column-1 .title header h1{margin:0;text-transform:uppercase;color:#5383c5}
+.template-single>.row-2>.column-1 .title header h2,.template-archive>.row-2>.column-1 .title header h2,.template-live>.row-2>.column-1 .title header h2{font-size:20px;margin:0}
+.template-single>.row-2>.column-1>.copy,.template-archive>.row-2>.column-1>.copy,.template-live>.row-2>.column-1>.copy{margin:15px 0 0 0}
+.template-single>.row-2>.column-1>.live,.template-archive>.row-2>.column-1>.live,.template-live>.row-2>.column-1>.live{margin:30px 0 0 0}
+.template-single>.row-2>.column-1>.live h2,.template-archive>.row-2>.column-1>.live h2,.template-live>.row-2>.column-1>.live h2{margin:0;size:25px}
+.template-single>.row-2>.column-1>.live .iframe-wrapper,.template-archive>.row-2>.column-1>.live .iframe-wrapper,.template-live>.row-2>.column-1>.live .iframe-wrapper{margin:15px 0 0 0;position:relative;width:100%;padding:56.25% 0 0 0}
+.template-single>.row-2>.column-1>.live .iframe-wrapper iframe,.template-archive>.row-2>.column-1>.live .iframe-wrapper iframe,.template-live>.row-2>.column-1>.live .iframe-wrapper iframe{width:100%;height:100%;position:absolute;top:0;left:0}
+.template-single>.row-2>.column-1>.past,.template-archive>.row-2>.column-1>.past,.template-live>.row-2>.column-1>.past{margin:30px 0 0 0}
+.template-single>.row-2>.column-1>.past h2,.template-archive>.row-2>.column-1>.past h2,.template-live>.row-2>.column-1>.past h2{margin:0;size:25px}
+.template-single>.row-2>.column-1>.past .iframe-wrapper,.template-archive>.row-2>.column-1>.past .iframe-wrapper,.template-live>.row-2>.column-1>.past .iframe-wrapper{margin:15px 0 0 0;position:relative;width:100%;padding:86.5% 0 0 0}
+.template-single>.row-2>.column-1>.past .iframe-wrapper iframe,.template-archive>.row-2>.column-1>.past .iframe-wrapper iframe,.template-live>.row-2>.column-1>.past .iframe-wrapper iframe{width:100%;height:100%;position:absolute;top:0;left:0}
+.template-single>.row-2>.column-1>.posts>.post,.template-archive>.row-2>.column-1>.posts>.post,.template-live>.row-2>.column-1>.posts>.post{margin:30px 0 0 0}
+.template-single>.row-2>.column-1>.posts>.post:first-child,.template-archive>.row-2>.column-1>.posts>.post:first-child,.template-live>.row-2>.column-1>.posts>.post:first-child{margin:0}
+.template-single>.row-2>.column-1>.posts>.post .title h2,.template-archive>.row-2>.column-1>.posts>.post .title h2,.template-live>.row-2>.column-1>.posts>.post .title h2{margin:0;text-transform:uppercase;font-size:25px}
+.template-single>.row-2>.column-1>.posts>.post .title h2 a,.template-archive>.row-2>.column-1>.posts>.post .title h2 a,.template-live>.row-2>.column-1>.posts>.post .title h2 a{color:#05264d;text-decoration:none}
+.template-single>.row-2>.column-1>.posts>.post .title h2 a:hover,.template-archive>.row-2>.column-1>.posts>.post .title h2 a:hover,.template-live>.row-2>.column-1>.posts>.post .title h2 a:hover{color:#5383c5}
+.template-single>.row-2>.column-1>.posts>.post .date,.template-archive>.row-2>.column-1>.posts>.post .date,.template-live>.row-2>.column-1>.posts>.post .date{margin:15px 0 0 0;font-family:Hero,serif;font-weight:800}
+.template-single>.row-2>.column-1>.posts>.post .copy,.template-archive>.row-2>.column-1>.posts>.post .copy,.template-live>.row-2>.column-1>.posts>.post .copy{margin:15px 0 0 0}
+.template-single>.row-2>.column-2,.template-archive>.row-2>.column-2,.template-live>.row-2>.column-2{width:100%;margin:10px 0}
+@media screen and (min-width:600px){.template-single>.row-2>.column-2,.template-archive>.row-2>.column-2,.template-live>.row-2>.column-2{width:25.5%;margin:0 0 0 4.5%;float:left}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
