@@ -92,7 +92,7 @@
                     $email = get_field("email");?>
                     <div class="row-1">
                         <div class="overlay">
-                            <a href="<?php echo get_the_permalink();?>">
+                            <a class="staff-popup" href="#<?php echo sanitize_title_with_dashes( get_the_title() ); ?>">
                                 <?php if($view_bio_text):?>
                                     <span><?php echo $view_bio_text;?></span>
                                 <?php endif;?>
@@ -127,6 +127,50 @@
                                 </div><!--.email-->
                             <?php endif;?>
                     </div><!--.row-3-->
+                    <div class="hidden staff-popup" id="<?php echo sanitize_title_with_dashes( get_the_title() ); ?>">
+                        <div class="row-1 clear-bottom">
+                            <div class="column-1">
+				                <?php if ( $image ): ?>
+                                    <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>">
+				                <?php endif; ?>
+                            </div><!--.column-1-->
+                            <div class="column-2">
+                                <div class="row-1">
+                                    <div class="row-1">
+                                        <h1><?php the_title(); ?></h1>
+						                <?php if ( $p_title ): ?>
+                                            <div class="p-title">
+								                <?php echo $p_title; ?>
+                                            </div><!--p-title-->
+						                <?php endif; ?>
+                                    </div><!--.row-1-->
+                                    <div class="row-2 clear-bottom">
+						                <?php if ( $phone ): ?>
+                                            <div class="phone">
+                                                <a href="tel:<?php echo $phone; ?>">
+									                <?php echo $phone; ?>
+                                                </a>
+                                            </div><!--.phone-->
+						                <?php endif; ?>
+						                <?php if ( $email ): ?>
+                                            <div class="email">
+                                                <a href="mailto:<?php echo $email; ?>">
+                                                    <i class="fa fa-envelope"></i>
+                                                </a>
+                                            </div><!--.email-->
+						                <?php endif; ?>
+                                    </div><!--.row-2-->
+                                </div><!--.row-1-->
+                                <div class="row-2">
+					                <?php if ( get_the_content() ): ?>
+                                        <div class="copy">
+							                <?php the_content(); ?>
+                                        </div><!--.copy-->
+					                <?php endif; ?>
+                                </div><!--.row-2-->
+                            </div><!--.column-2-->
+                        </div><!--.row-1-->
+                    </div><!--.staff-popup-->
                 </div><!--.staff-->
                 <?php $count++;
             endwhile;?>

@@ -71,7 +71,7 @@
 			overflow:visible;  
 			position:absolute; 
 			top:10px; 
-			background:url(images/controls-new.png); 
+			background: none;
 			background-size: 150px 100px;
 			background-repeat: no-repeat;
 			width:50px; 
@@ -87,7 +87,19 @@
         #cboxPrevious:hover{background-position:-0px -50px;}
         #cboxNext{left:90px; background-position:-50px -0px;}
         #cboxNext:hover{background-position:-50px -50px;}
-        #cboxClose{right:20px; background-position:-100px -0px;}
+        #cboxClose{
+          right:20px;
+          background-position:-100px -0px;
+          text-indent: 0;
+          text-align: center;
+          font-size: 30px;
+          width: 30px;
+          height: 30px;
+          @media screen and (min-width: $tabwidth) {
+            width: 50px;
+            height: 50px;
+          }
+        }
         #cboxClose:hover{background-position:-100px -50px;}
 
         .cboxSlideshow_on #cboxSlideshow{background-position:-125px 0px; right:27px;}
