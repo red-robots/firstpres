@@ -10,4 +10,8 @@
     <ul>
 		<?php wp_get_archives('type=monthly'); ?>
     </ul>
+    <h2>Categories</h2>
+    <ul>
+        <?php wp_list_categories(array('title_li'=>""));?>
+    </ul>
 </aside><!-- #secondary -->
