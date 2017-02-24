@@ -22,7 +22,7 @@ get_header("interior"); ?>
                             </div><!--.title-->
                             <div class="posts">
                                 <?php while(have_posts()):the_post();?>
-                                    <div class="post">
+                                    <div class="post clear-bottom">
                                         <div class="title">
                                             <header>
                                                 <h2>
