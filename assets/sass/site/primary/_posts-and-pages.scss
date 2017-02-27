@@ -12,7 +12,7 @@
         top: 30px;
       }
       >.row-1 {
-        width: 30%;
+        width: 25%;
         margin: 0 auto;
         h1 {
           img {
@@ -80,67 +80,70 @@
     }
   }
   >.row-2 {
-    width: 95%;
-    margin: 10px auto;
-    @media screen and (min-width: $tabwidth){
-      width: 90%;
-    }
-    > button {
-      display: block;
-      margin: 0 auto 20px auto;
-      box-shadow: none;
-      text-shadow: none;
-      background-color: $color__first-blue;
-      color: white;
-      font-size: 18px;
-      padding: 10px;
-      @media screen and (min-width: $tabwidth){
-        display: none;
+
+    > .wrapper {
+      width: 95%;
+      margin: 10px auto;
+      @media screen and (min-width: $tabwidth) {
+        width: 90%;
       }
-    }
-    ul#primary-menu {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      display: none;
-      &.toggled {
+      > button {
         display: block;
-      }
-      @media screen and (min-width: $tabwidth){
-        display: block;
-      }
-      li {
-        text-align: center;
-        list-style-type: none;
+        margin: 0 auto 20px auto;
+        box-shadow: none;
+        text-shadow: none;
+        background-color: $color__first-blue;
+        color: white;
+        font-size: 18px;
+        padding: 10px;
         @media screen and (min-width: $tabwidth) {
-          display: inline-block;
+          display: none;
         }
-        &:first-child {
+      }
+      ul#primary-menu {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        display: none;
+        &.toggled {
+          display: block;
+        }
+        @media screen and (min-width: $tabwidth) {
+          display: block;
+        }
+        li {
+          text-align: center;
+          list-style-type: none;
+          @media screen and (min-width: $tabwidth) {
+            display: inline-block;
+          }
+          &:first-child {
+            a {
+              &:before {
+                display: none;
+              }
+            }
+          }
           a {
             &:before {
               display: none;
+              @media screen and (min-width: $tabwidth) {
+                content: "|";
+                display: inline-block;
+                transform: rotate(25deg);
+                color: $color__first-blue;
+                margin: 0 20px;
+                font-size: 35px;
+                line-height: 1;
+              }
             }
+            color: $color__first-grey;
+            text-decoration: none;
+            font-size: 25px;
+            text-transform: uppercase;
+            font-family: Elkwood, serif;
+            letter-spacing: 1px;
           }
-        }
-        a {
-          &:before {
-            display: none;
-            @media screen and (min-width: $tabwidth) {
-              content: "|";
-              display: inline-block;
-              transform: rotate(25deg);
-              color: $color__first-blue;
-              margin: 0 20px;
-              font-size: 35px;
-              line-height: 1;
-            }
-          }
-          color: $color__first-grey;
-          text-decoration: none;
-          font-size: 25px;
-          text-transform: uppercase;
-          font-family: Elkwood, serif;
-          letter-spacing: 1px;
         }
       }
     }
@@ -250,7 +253,7 @@
         }
         .copy {
           padding: 0 5px;
-          font-size: 13px;
+          font-size: 18px;
           font-family: Elkwood, serif;
         }
         .more {
@@ -306,56 +309,59 @@
     }
   }
 }
-.template-page, .template-about, .template-sitemap, .error-404, .template-worship, .template-this-week {
+.template-page, .template-about, .template-sitemap,
+.error-404, .template-worship, .template-this-week, .template-live {
   > .row-1 {
-    padding: 10px 0;
-    background-color: $color__first-dark-blue;
-    ul#sub-menu {
-      width: 95%;
-      margin: 0 auto;
-      padding: 0;
-      text-align: center;
-      display: none;
-      @media screen and (min-width: $tabwidth) {
-        width: 90%;
-      }
-      &.toggled {
-        display: block;
-      }
-      @media screen and (min-width: $tabwidth) {
-        display: block;
-      }
-      li {
+    >.wrapper {
+      padding: 10px 0;
+      background-color: $color__first-dark-blue;
+      ul#sub-menu {
+        width: 95%;
+        margin: 0 auto;
+        padding: 0;
         text-align: center;
-        list-style-type: none;
+        display: none;
         @media screen and (min-width: $tabwidth) {
-          display: inline-block;
+          width: 90%;
         }
-        &:first-child {
+        &.toggled {
+          display: block;
+        }
+        @media screen and (min-width: $tabwidth) {
+          display: block;
+        }
+        li {
+          text-align: center;
+          list-style-type: none;
+          @media screen and (min-width: $tabwidth) {
+            display: inline-block;
+          }
+          &:first-child {
+            a {
+              &:before {
+                display: none;
+              }
+            }
+          }
           a {
             &:before {
               display: none;
+              @media screen and (min-width: $tabwidth) {
+                content: "|";
+                display: inline-block;
+                color: white;
+                margin: 0 20px;
+                font-size: 30px;
+                line-height: 1;
+              }
             }
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: Elkwood, serif;
+            letter-spacing: 1px;
           }
-        }
-        a {
-          &:before {
-            display: none;
-            @media screen and (min-width: $tabwidth) {
-              content: "|";
-              display: inline-block;
-              color: white;
-              margin: 0 20px;
-              font-size: 30px;
-              line-height: 1;
-            }
-          }
-          color: white;
-          text-decoration: none;
-          font-size: 20px;
-          text-transform: uppercase;
-          font-family: Elkwood, serif;
-          letter-spacing: 1px;
         }
       }
     }
@@ -392,6 +398,46 @@
       .copy {
         margin: 15px 0 0 0;
 
+      }
+      > .live {
+        margin: 30px 0 0 0;
+        h2 {
+          margin: 0;
+          size: 25px;
+        }
+        .iframe-wrapper {
+          margin: 15px 0 0 0;
+          position: relative;
+          width: 100%;
+          padding: 56.25% 0 0 0;
+          iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      > .past {
+        margin: 30px 0 0 0;
+        h2 {
+          margin: 0;
+          size: 25px;
+        }
+        .iframe-wrapper {
+          margin: 15px 0 0 0;
+          position: relative;
+          width: 100%;
+          padding: 86.5% 0 0 0;
+          iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
       }
     }
     > .column-2 {
@@ -492,6 +538,9 @@
                   color: white;
                   text-decoration: none;
                   text-transform: uppercase;
+                  font-family: Elkwood, sans-serif;
+                  font-size: 28px;
+                  line-height: 1;
                 }
               }
             }
@@ -539,6 +588,9 @@
                 float: left;
                 a {
                   color: inherit;
+                  font-family: Elkwood, sans-serif;
+                  font-size: 22px;
+                  line-height: 1;
                   text-decoration: none;
                 }
               }
@@ -642,54 +694,56 @@
 }
 .template-staff {
   > .row-1 {
-    padding: 10px 0;
-    background-color: $color__first-dark-blue;
-    ul#sub-menu {
-      width: 95%;
-      margin: 0 auto;
-      padding: 0;
-      text-align: center;
-      display: none;
-      @media screen and (min-width: $tabwidth) {
-        width: 90%;
-      }
-      &.toggled {
-        display: block;
-      }
-      @media screen and (min-width: $tabwidth) {
-        display: block;
-      }
-      li {
+    >.wrapper {
+      padding: 10px 0;
+      background-color: $color__first-dark-blue;
+      ul#sub-menu {
+        width: 95%;
+        margin: 0 auto;
+        padding: 0;
         text-align: center;
-        list-style-type: none;
+        display: none;
         @media screen and (min-width: $tabwidth) {
-          display: inline-block;
+          width: 90%;
         }
-        &:first-child {
+        &.toggled {
+          display: block;
+        }
+        @media screen and (min-width: $tabwidth) {
+          display: block;
+        }
+        li {
+          text-align: center;
+          list-style-type: none;
+          @media screen and (min-width: $tabwidth) {
+            display: inline-block;
+          }
+          &:first-child {
+            a {
+              &:before {
+                display: none;
+              }
+            }
+          }
           a {
             &:before {
               display: none;
+              @media screen and (min-width: $tabwidth) {
+                content: "|";
+                display: inline-block;
+                color: white;
+                margin: 0 20px;
+                font-size: 30px;
+                line-height: 1;
+              }
             }
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: Elkwood, serif;
+            letter-spacing: 1px;
           }
-        }
-        a {
-          &:before {
-            display: none;
-            @media screen and (min-width: $tabwidth) {
-              content: "|";
-              display: inline-block;
-              color: white;
-              margin: 0 20px;
-              font-size: 30px;
-              line-height: 1;
-            }
-          }
-          color: white;
-          text-decoration: none;
-          font-size: 20px;
-          text-transform: uppercase;
-          font-family: Elkwood, serif;
-          letter-spacing: 1px;
         }
       }
     }
@@ -837,6 +891,9 @@
               color: white;
               text-decoration: none;
               text-transform: uppercase;
+              font-family: Elkwood, sans-serif;
+              font-size: 28px;
+              line-height: 1;
             }
           }
         }
@@ -884,6 +941,9 @@
             float: left;
             a {
               color: inherit;
+              font-family: Elkwood, sans-serif;
+              font-size: 22px;
+              line-height: 1;
               text-decoration: none;
             }
           }
@@ -901,7 +961,7 @@
     }
   }
 }
-.template-single, .template-archive {
+.template-single, .template-archive, .template-single-event {
   > .row-1 {
     margin-bottom: 5%;
     img {
@@ -1017,147 +1077,63 @@
         margin: 0 0 0 4.5%;
         float: left;
       }
-    }
-  }
-}
-.template-live {
-  > .row-1 {
-    padding: 10px 0;
-    background-color: $color__first-dark-blue;
-    ul#sub-menu {
-      width: 95%;
-      margin: 0 auto;
-      padding: 0;
-      text-align: center;
-      display: none;
-      @media screen and (min-width: $tabwidth) {
-        width: 90%;
-      }
-      &.toggled {
-        display: block;
-      }
-      @media screen and (min-width: $tabwidth) {
-        display: block;
-      }
-      li {
-        text-align: center;
-        list-style-type: none;
-        @media screen and (min-width: $tabwidth) {
-          display: inline-block;
-        }
-        &:first-child {
+      >aside.event {
+        .event {
+          margin: 0 0 20px 0;
+          &:last-child {
+            margin: 0;
+          }
           a {
-            &:before {
-              display: none;
-            }
-          }
-        }
-        a {
-          &:before {
-            display: none;
-            @media screen and (min-width: $tabwidth) {
-              content: "|";
-              display: inline-block;
-              color: white;
-              margin: 0 20px;
-              font-size: 30px;
-              line-height: 1;
-            }
-          }
-          color: white;
-          text-decoration: none;
-          font-size: 20px;
-          text-transform: uppercase;
-          font-family: Elkwood, serif;
-          letter-spacing: 1px;
-        }
-      }
-    }
-  }
-  > .row-2 {
-    margin-bottom: 5%;
-    img {
-      width: 100%;
-      display: block;
-    }
-  }
-  >.row-3 {
-    width: 95%;
-    margin: 20px auto 0 auto;
-    @media screen and (min-width: $tabwidth) {
-      width: 90%;
-    }
-    > .column-1 {
-      width: 100%;
-      @media screen and (min-width: $tabwidth) {
-        width: 70%;
-        float: left;
-      }
-      .title {
-        margin: 0 0 15px 0;
-        header {
-          h1 {
-            margin: 0;
+            font-size: 12px;
             text-transform: uppercase;
-            color: $color__first-light-blue;
-          }
-          h2 {
-            font-size: 20px;
-            margin: 0;
-          }
-        }
-      }
-      > .copy {
-        margin: 15px 0 0 0;
-      }
-      > .live {
-        margin: 30px 0 0 0;
-        h2 {
-          margin: 0;
-          size: 25px;
-        }
-        .iframe-wrapper {
-          margin: 15px 0 0 0;
-          position: relative;
-          width: 100%;
-          padding: 56.25% 0 0 0;
-          iframe {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-        }
-      }
-      > .past {
-        margin: 30px 0 0 0;
-        h2 {
-          margin: 0;
-          size: 25px;
-        }
-        .iframe-wrapper {
-          margin: 15px 0 0 0;
-          position: relative;
-          width: 100%;
-          padding: 86.5% 0 0 0;
-          iframe {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+            font-weight: 800;
+            color: $color__text-main;
+            text-decoration: none;
+            @media screen and (min-width: $deskwidth) {
+              font-size: 14px;
+            }
+            > .column-1 {
+              float: left;
+              width: 40px;
+              font-family: Elkwood, serif;
+              letter-spacing: 2px;
+              @media screen and (min-width: $deskwidth) {
+                width: 70px;
+              }
+              > .row-1 {
+                background-color: $color__first-blue;
+                color: white;
+                text-align: center;
+                font-size: 12px;
+                @media screen and (min-width: $deskwidth) {
+                  font-size: 20px;
+                }
+              }
+              > .row-2 {
+                background-color: $color__first-dark-blue;
+                color: white;
+                text-align: center;
+                font-size: 12px;
+                @media screen and (min-width: $deskwidth) {
+                  font-size: 20px;
+                }
+
+              }
+            }
+            > .column-2 {
+              float: left;
+              width: calc(100% - 40px);
+              padding-left: 5px;
+              font-family: Elkwood, serif;
+              letter-spacing: 2px;
+              font-size: 16px;
+              @media screen and (min-width: $deskwidth) {
+                width: calc(100% - 70px);
+                font-size: 20px;
+              }
+            }
           }
         }
-      }
-    }
-    > .column-2 {
-      width: 100%;
-      margin: 10px 0;
-      @media screen and (min-width: $tabwidth) {
-        width: 25.5%;
-        margin: 0 0 0 4.5%;
-        float: left;
       }
     }
   }

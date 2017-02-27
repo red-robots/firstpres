@@ -136,7 +136,7 @@
               letter-spacing: 2px;
               color: $color__text-main;
               @media screen and (min-width: $deskwidth) {
-                font-size: 16px;
+                font-size: 20px;
               }
             }
           }
@@ -159,7 +159,7 @@
               font-family: Elkwood, serif;
               letter-spacing: 2px;
               @media screen and (min-width: $deskwidth) {
-                font-size: 16px;
+                font-size: 20px;
               }
             }
           }
@@ -212,8 +212,10 @@
               padding-left: 5px;
               font-family: Elkwood, serif;
               letter-spacing: 2px;
+              font-size: 14px;
               @media screen and (min-width: $deskwidth) {
                 width: calc(100% - 70px);
+                font-size: 20px;
               }
             }
           }
@@ -279,7 +281,60 @@
           margin: 0;
           padding: 0;
           list-style-type: none;
+          text-align: center;
           display: inline-block;
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          font-size: 22px;
+          background-color: $color__first-blue;
+          a {
+            color: white;
+            padding: 9px;
+            line-height: 1;
+            display: block;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  >.row-3 {
+    width: 95%;
+    margin: 0 auto;
+    @media screen and (min-width: $tabwidth) {
+      width: 90%;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      @media screen and (min-width: $tabwidth) {
+        text-align: left;
+      }
+      li {
+        display: inline-block;
+        &:first-child {
+          a {
+            &:before {
+              display: none;
+            }
+          }
+        }
+        a {
+          &:before {
+              content: "|";
+              display: inline-block;
+              margin: 0 5px 0 2px;
+              color: $color__first-blue;
+          }
+          color: $color__first-blue;
+          text-decoration: none;
+          font-size: 14px;
+          font-family: Elkwood, serif;
+          &:hover {
+            color: $color__first-light-blue;
+          }
         }
       }
     }
@@ -369,67 +424,69 @@
       }
     }
     > .row-3 {
-      width: 95%;
-      margin: 10px auto;
-      @media screen and (min-width: $tabwidth) {
-        width: 90%;
-      }
-      > button {
-        display: block;
-        margin: 0 auto 20px auto;
-        box-shadow: none;
-        text-shadow: none;
-        background-color: $color__first-blue;
-        color: white;
-        font-size: 18px;
-        padding: 10px;
+      > .wrapper {
+        width: 95%;
+        margin: 10px auto;
         @media screen and (min-width: $tabwidth) {
-          display: none;
+          width: 90%;
         }
-      }
-      ul#primary-menu {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        display: none;
-        &.toggled {
+        > button {
           display: block;
-        }
-        @media screen and (min-width: $tabwidth) {
-          display: block;
-        }
-        li {
-          text-align: center;
-          list-style-type: none;
+          margin: 0 auto 20px auto;
+          box-shadow: none;
+          text-shadow: none;
+          background-color: $color__first-blue;
+          color: white;
+          font-size: 18px;
+          padding: 10px;
           @media screen and (min-width: $tabwidth) {
-            display: inline-block;
+            display: none;
           }
-          &:first-child {
+        }
+        ul#primary-menu {
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          display: none;
+          &.toggled {
+            display: block;
+          }
+          @media screen and (min-width: $tabwidth) {
+            display: block;
+          }
+          li {
+            text-align: center;
+            list-style-type: none;
+            @media screen and (min-width: $tabwidth) {
+              display: inline-block;
+            }
+            &:first-child {
+              a {
+                &:before {
+                  display: none;
+                }
+              }
+            }
             a {
               &:before {
                 display: none;
+                @media screen and (min-width: $tabwidth) {
+                  content: "|";
+                  display: inline-block;
+                  transform: rotate(25deg);
+                  color: $color__first-blue;
+                  margin: 0 20px;
+                  font-size: 35px;
+                  line-height: 1;
+                }
               }
+              color: $color__first-grey;
+              text-decoration: none;
+              font-size: 25px;
+              text-transform: uppercase;
+              font-family: Elkwood, serif;
+              letter-spacing: 1px;
             }
-          }
-          a {
-            &:before {
-              display: none;
-              @media screen and (min-width: $tabwidth) {
-                content: "|";
-                display: inline-block;
-                transform: rotate(25deg);
-                color: $color__first-blue;
-                margin: 0 20px;
-                font-size: 35px;
-                line-height: 1;
-              }
-            }
-            color: $color__first-grey;
-            text-decoration: none;
-            font-size: 25px;
-            text-transform: uppercase;
-            font-family: Elkwood, serif;
-            letter-spacing: 1px;
           }
         }
       }
@@ -469,7 +526,8 @@
               margin: 0;
             }
             .p-title {
-
+              font-family: Elkwood, serif;
+              font-size: 18px;
             }
           }
           >.row-2 {
@@ -478,6 +536,9 @@
               a {
                 color: $color__first-blue;
                 text-decoration: none;
+                font-family: Elkwood, serif;
+                font-size: 22px;
+                line-height: 1;
                 &:hover {
                   color: $color__first-light-blue;
                 }

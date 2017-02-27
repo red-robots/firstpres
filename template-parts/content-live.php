@@ -14,16 +14,18 @@
 	wp_reset_postdata();
 	if($sections):?>
         <div class="row-1">
-            <ul id="sub-menu">
-				<?php foreach($sections as $section):
-					if($section['menu_title']):?>
-                        <li><a href="<?php echo $link.'#'.$section['menu_title'];?>"><?php echo $section['menu_title'];?></a></li>
-					<?php endif;
-				endforeach;?>
-                <li>
-                    <a href="<?php echo get_the_permalink();?>"><?php the_title();?></a>
-                </li>
-            </ul>
+            <div class="wrapper sub-menu">
+                <ul id="sub-menu">
+                    <?php foreach($sections as $section):
+                        if($section['menu_title']):?>
+                            <li><a href="<?php echo $link.'#'.$section['menu_title'];?>"><?php echo $section['menu_title'];?></a></li>
+                        <?php endif;
+                    endforeach;?>
+                    <li>
+                        <a href="<?php echo get_the_permalink();?>"><?php the_title();?></a>
+                    </li>
+                </ul>
+            </div><!--.wrapper-->
         </div><!--.row-1-->
 	<?php endif;?>
     <?php $image = get_field("banner");
@@ -70,7 +72,7 @@
             <?php endif;?>
         </div><!--.column-1-->
         <div class="column-2">
-	        <?php get_sidebar('archive');?>
+	        <?php get_sidebar('staff');?>
         </div><!--.column-2-->
     </div><!--.row-3-->
 </article><!-- #post-## -->

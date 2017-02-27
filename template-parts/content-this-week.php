@@ -11,16 +11,18 @@
     $blog_title = get_field("blog_title");
     if($sections):?>
         <div class="row-1">
-            <ul id="sub-menu">
-                <?php if($blog_title):?>
-                    <li><a href="#<?php echo $blog_title;?>"><?php echo $blog_title;?></a></li>
-                <?php endif;
-                foreach($sections as $section):
-                    if($section['menu_title']):?>
-                        <li><a href="#<?php echo $section['menu_title'];?>"><?php echo $section['menu_title'];?></a></li>
+            <div class="wrapper sub-menu">
+                <ul id="sub-menu">
+                    <?php if($blog_title):?>
+                        <li><a href="#<?php echo $blog_title;?>"><?php echo $blog_title;?></a></li>
                     <?php endif;
-                endforeach;?>
-            </ul>
+                    foreach($sections as $section):
+                        if($section['menu_title']):?>
+                            <li><a href="#<?php echo $section['menu_title'];?>"><?php echo $section['menu_title'];?></a></li>
+                        <?php endif;
+                    endforeach;?>
+                </ul>
+            </div><!--.wrapper-->
         </div><!--.row-1-->
     <?php endif;?>
     <?php $image = get_field("banner");

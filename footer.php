@@ -23,7 +23,7 @@
                 <div class="list">
                     <?php $args = array(
                             'post_type'=>'event',
-                            'posts_per_page' => -1,
+                            'posts_per_page' => 4,
                             'order'=>'ASC',
                             'orderby'=>'menu_order',
                             'meta_query'=>array(
@@ -146,39 +146,42 @@
             </div><!-- .column-1 -->
             <div class="column-2">
                 <ul>
+	                <?php $facebook=get_field("facebook_link","option");
+	                if($facebook):?>
                     <li class="facebook">
-                        <?php $facebook=get_field("facebook_link","option");
-                        if($facebook):?>
-                            <a href="<?php echo $facebook;?>"><img src="<?php echo get_template_directory_uri()."/images/social/facebook.png";?>" alt="facebook"></a>
-                        <?php endif;?>
+                            <a href="<?php echo $facebook;?>"><i class="fa fa-facebook-f"></i></a>
                     </li><!--.facebook-->
+	                <?php endif;?>
+	                <?php $twitter=get_field("twitter_link","option");
+	                if($twitter):?>
                     <li class="twitter">
-                        <?php $twitter=get_field("twitter_link","option");
-                        if($twitter):?>
-                            <a href="<?php echo $twitter;?>"><img src="<?php echo get_template_directory_uri()."/images/social/twitter.png";?>" alt="twitter"></a>
-                        <?php endif;?>
+                            <a href="<?php echo $twitter;?>"><i class="fa fa-twitter"></i></a>
                     </li><!--.twitter-->
+	                <?php endif;?>
+	                <?php $instagram=get_field("instagram_link","option");
+	                if($instagram):?>
                     <li class="instagram">
-                        <?php $instagram=get_field("instagram_link","option");
-                        if($instagram):?>
-                            <a href="<?php echo $instagram;?>"><img src="<?php echo get_template_directory_uri()."/images/social/instagram.png";?>" alt="instagram"></a>
-                        <?php endif;?>
+                            <a href="<?php echo $instagram;?>"><i class="fa fa-instagram"></i></a>
                     </li><!--.instagram-->
+	                <?php endif;?>
+	                <?php $linkedin=get_field("linkedin_link","option");
+	                if($linkedin):?>
                     <li class="linkedin">
-                        <?php $linkedin=get_field("linkedin_link","option");
-                        if($linkedin):?>
-                            <a href="<?php echo $linkedin;?>"><img src="<?php echo get_template_directory_uri()."/images/social/linkedin.png";?>" alt="linkedin"></a>
-                        <?php endif;?>
+                            <a href="<?php echo $linkedin;?>"><i class="fa fa-linkedin"></i></a>
                     </li><!--.linkedin-->
+	                <?php endif;?>
+	                <?php $vimeo=get_field("vimeo_link","option");
+	                if($vimeo):?>
                     <li class="vimeo">
-                        <?php $vimeo=get_field("vimeo_link","option");
-                        if($vimeo):?>
-                            <a href="<?php echo $vimeo;?>"><img src="<?php echo get_template_directory_uri()."/images/social/vimeo.png";?>" alt="vimeo"></a>
-                        <?php endif;?>
+                            <a href="<?php echo $vimeo;?>"><i class="fa fa-vimeo"></i></a>
                     </li><!--.vimeo-->
+	                <?php endif;?>
                 </ul>
             </div><!--.column-2-->
 	    </div><!-- .row-2 -->
+        <div class="row-3">
+	        <?php wp_nav_menu( array( 'theme_location' => 'sitemapBW') ); ?>
+        </div><!--.row-3-->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

@@ -110,5 +110,77 @@ jQuery(document).ready(function ($) {
 	    $.colorbox.resize({
 	        width: width,
         });
-    })
+    });
+    if ($('.wrapper.main-menu').length > 0) {
+        $html = $('html');
+        $main_menu = $('.wrapper.main-menu');
+        $main_menu_parent = $main_menu.parent();
+        $sub_menu = $('.wrapper.sub-menu');
+        $sub_menu_parent = $sub_menu.parent();
+        $window = $(window);
+        $window.on('scroll', check);
+        $window.on('resize', check);
+        check();
+        function check() {
+            $anchor = $main_menu_parent.offset().top;
+            html_margin = $html.length ? parseFloat($html.css('marginTop')) : 0;
+            if ($anchor <= $window.scrollTop() + html_margin && window.innerWidth > 600) {
+                $main_menu.css({
+                    position: "fixed",
+                    top: html_margin+"px",
+                    left: "0",
+                    width: "100%",
+                    padding: "10px 10%",
+                    backgroundColor: "white",
+                    margin: "0",
+                    zIndex: 3
+                });
+                main_menu_height = parseFloat($main_menu.outerHeight());
+                $main_menu_parent.css({
+                    "height": main_menu_height+"px"
+                });
+                $sub_menu.css({
+                    position: "fixed",
+                    top: html_margin+main_menu_height+"px",
+                    left: "0",
+                    width: "100%",
+                    padding: "10px 10%",
+                    backgroundColor: "#05264d",
+                    margin: "0",
+                    zIndex: 3
+                });
+                $sub_menu_parent.css({
+                    "height": $sub_menu.outerHeight()
+                });
+            }
+            if ($anchor > $window.scrollTop() + html_margin || window.innerWidth < 600) {
+                $main_menu.css({
+                    position: "",
+                    top: "",
+                    left: "",
+                    width: "",
+                    padding: "",
+                    backgroundColor: "",
+                    margin: "",
+                    zIndex: ""
+                });
+                $main_menu_parent.css({
+                    height: ""
+                });
+                $sub_menu.css({
+                    position: "",
+                    top: "",
+                    left: "",
+                    width: "",
+                    padding: "",
+                    backgroundColor: "",
+                    margin: "",
+                    zIndex: ""
+                });
+                $sub_menu_parent.css({
+                    height: ""
+                });
+            }
+        }
+    }
 });// END #####################################    END
