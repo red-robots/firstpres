@@ -18,7 +18,7 @@
                 <ul id="sub-menu">
                     <?php foreach($sections as $section):
                         if($section['menu_title']):?>
-                            <li><a href="<?php echo $link.'#'.$section['menu_title'];?>"><?php echo $section['menu_title'];?></a></li>
+                            <li><a href="<?php echo $link.'#'.sanitize_title_with_dashes($section['menu_title']);?>"><?php echo $section['menu_title'];?></a></li>
                         <?php endif;
                     endforeach;?>
                     <li>

@@ -18,7 +18,7 @@
                     <?php endif;
                     foreach($sections as $section):
                         if($section['menu_title']):?>
-                            <li><a href="#<?php echo $section['menu_title'];?>"><?php echo $section['menu_title'];?></a></li>
+                            <li><a href="#<?php echo sanitize_title_with_dashes($section['menu_title']);?>"><?php echo $section['menu_title'];?></a></li>
                         <?php endif;
                     endforeach;?>
                 </ul>
@@ -84,7 +84,7 @@
             $copy = $sections[$i]['copy'];
             $menu_title = $sections[$i]['menu_title'];
             $image = $sections[$i]['image'];?>
-            <a name="<?php echo $menu_title;?>"></a>
+            <a name="<?php echo sanitize_title_with_dashes($menu_title);?>"></a>
             <div class="content-row clear-bottom row-<?php echo $i+5;?>">
 	            <?php if($title):?>
                     <div class="title">

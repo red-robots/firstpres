@@ -74,21 +74,31 @@
                             <?php foreach($resources as $resource):
                                 $title = $resource['title'];
                                 if($title && $resource['internal_or_external_link']):?>
-                                    <li class="resource">
-                                        <?php if(strcmp($resource['internal_or_external_link'],'internal')===0):
-                                            if($resource['internal_link']):?>
+                                    <?php if(strcmp($resource['internal_or_external_link'],'internal')===0):
+                                        if($resource['internal_link']):?>
+                                            <li class="resource">
                                                 <a href="<?php echo get_the_permalink($resource['internal_link']);?>">
                                                     <?php echo $title;?>
                                                 </a>
-                                            <?php endif;
-                                        else:
-                                            if($resource['external_link']):?>
+                                            </li><!--.resource-->
+                                        <?php endif;
+                                    elseif(strcmp($resource['internal_or_external_link'],'external')===0):
+                                        if($resource['external_link']):?>
+                                            <li class="resource">
                                                 <a href="<?php echo $resource['external_link'];?>">
                                                     <?php echo $title;?>
                                                 </a>
-                                            <?php endif;
-                                        endif;?>
-                                    </li><!--.resource-->
+                                            </li><!--.resource-->
+                                        <?php endif;
+                                    else:
+	                                    if($resource['pdf']):?>
+                                            <li class="resource">
+                                                <a href="<?php echo $resource['pdf']['url'];?>">
+				                                    <?php echo $title;?>
+                                                </a>
+                                            </li><!--.resource-->
+                                        <?php endif;
+                                    endif;?>
                                 <?php endif;
                             endforeach;?>
                         </ul>
