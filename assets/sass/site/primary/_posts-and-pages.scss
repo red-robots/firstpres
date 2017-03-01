@@ -143,6 +143,9 @@
             text-transform: uppercase;
             font-family: Elkwood, serif;
             letter-spacing: 1px;
+            &:hover, &.active {
+              color: $color__first-blue;
+            }
           }
         }
       }
@@ -651,7 +654,7 @@
   }
 }
 .template-this-week {
-  >.row-4 {
+  >.row-blog {
     width: 95%;
     margin: 0 auto;
     @media screen and (min-width: $tabwidth){

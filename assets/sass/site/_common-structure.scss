@@ -104,6 +104,10 @@
         background-color: $color__first-dark-blue;
         @include flexbox-flex(0, 1, auto);
         width: 100%;
+        a {
+          display: block;
+          text-decoration: none;
+        }
         h2 {
           margin: 0;
           text-align: center;
@@ -486,6 +490,9 @@
               text-transform: uppercase;
               font-family: Elkwood, serif;
               letter-spacing: 1px;
+              &:hover, &.active {
+                color: $color__first-blue;
+              }
             }
           }
         }

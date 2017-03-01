@@ -12,13 +12,19 @@
 ?>
 
 	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <div class="row-1">
             <div class="column column-1">
-                <?php $events_title = get_field("events_title","option");?>
+                <?php $events_title = get_field("events_title","option");
+                $events_link = get_field("events_link","option");?>
                 <div class="title">
-                    <h2><?php if($events_title) echo $events_title;?></h2>
+                    <?php if($events_link):?>
+                        <a href="<?php echo $events_link;?>">
+                    <?php endif;?>
+                        <h2><?php if($events_title) echo $events_title;?></h2>
+                    <?php if($events_link):?>
+                        </a>
+                    <?php endif;?>
                 </div><!--.title-->
                 <div class="list">
                     <?php $args = array(
@@ -64,9 +70,16 @@
             </div><!--.column-1-->
             <div class="column column-2">
                 <?php $resources = get_field("resources_repeater","option");
-                $resources_title = get_field("resources_title","option");?>
+                $resources_title = get_field("resources_title","option");
+                $resources_link = get_field("resources_link","option");?>
                 <div class="title">
-                    <h2><?php if($resources_title) echo $resources_title;?></h2>
+	                <?php if($resources_link):?>
+                        <a href="<?php echo $resources_link;?>">
+                    <?php endif;?>
+                        <h2><?php if($resources_title) echo $resources_title;?></h2>
+                    <?php if($resources_link):?>
+                        </a>
+                    <?php endif;?>
                 </div><!--.title-->
                 <div class="list">
                     <?php if($resources):?>
@@ -107,9 +120,16 @@
             </div><!--.column-2-->
             <div class="column column-3">
 	            <?php $gives = get_field("give_repeater","option");
-	            $give_title = get_field("give_title","option");?>
+	            $give_title = get_field("give_title","option");
+	            $give_link = get_field("give_link","option");?>
                 <div class="title">
-                    <h2><?php if($give_title) echo $give_title;?></h2>
+	                <?php if($give_link):?>
+                        <a href="<?php echo $give_link;?>">
+                    <?php endif;?>
+                        <h2><?php if($give_title) echo $give_title;?></h2>
+                    <?php if($give_link):?>
+                        </a>
+                    <?php endif;?>
                 </div><!--.title-->
                 <div class="list">
 	                <?php if($gives):?>

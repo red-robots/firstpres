@@ -51,9 +51,35 @@
             <?php endif;?>
         </div><!--.column-2-->
     </div><!--.row-3-->
+	<?php if($sections):
+		for($i=0;$i<count($sections);$i++):
+			$title = $sections[$i]['title'];
+			$copy = $sections[$i]['copy'];
+			$menu_title = $sections[$i]['menu_title'];
+			$image = $sections[$i]['image'];?>
+            <a name="<?php echo sanitize_title_with_dashes($menu_title);?>"></a>
+            <div class="content-row clear-bottom row-<?php echo $i+4;?>">
+				<?php if($title):?>
+                    <div class="title">
+                        <h2><?php echo $title;?></h2>
+                    </div><!--.title-->
+				<?php endif;?>
+                <div class="column-1 copy">
+					<?php if($copy):?>
+						<?php echo $copy?>
+					<?php endif;?>
+                </div><!--.column-1-->
+                <div class="column-2">
+					<?php if($image):?>
+                        <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
+					<?php endif;?>
+                </div><!--.column-2-->
+            </div><!--.row-#-->
+		<?php endfor;
+	endif;//if for sections?>
     <?php if($blog_title):?>
         <a name="<?php echo $blog_title;?>"></a>
-        <div class="row-4 clear-bottom">
+        <div class="row-blog clear-bottom">
             <?php $image = get_field("blog_image");
             $picker = get_field("blog_picker");?>
             <div class="title">
@@ -78,30 +104,4 @@
             <?php endif;?>
         </div><!--.row-4-->
     <?php endif;?>
-    <?php if($sections):
-        for($i=0;$i<count($sections);$i++):
-            $title = $sections[$i]['title'];
-            $copy = $sections[$i]['copy'];
-            $menu_title = $sections[$i]['menu_title'];
-            $image = $sections[$i]['image'];?>
-            <a name="<?php echo sanitize_title_with_dashes($menu_title);?>"></a>
-            <div class="content-row clear-bottom row-<?php echo $i+5;?>">
-	            <?php if($title):?>
-                    <div class="title">
-                        <h2><?php echo $title;?></h2>
-                    </div><!--.title-->
-	            <?php endif;?>
-                <div class="column-1 copy">
-		            <?php if($copy):?>
-                        <?php echo $copy?>
-		            <?php endif;?>
-                </div><!--.column-1-->
-                <div class="column-2">
-                    <?php if($image):?>
-                        <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
-                    <?php endif;?>
-                </div><!--.column-2-->
-            </div><!--.row-#-->
-        <?php endfor;
-    endif;//if for sections?>
 </article><!-- #post-## -->

@@ -24,6 +24,10 @@
                 <div class="copy">
                     <p><?php echo the_date();?></p>
                     <?php the_content();?>
+                    <p class="links">
+	                    <?php previous_post_link('%link','&laquo; Previous Blog Post');?> &nbsp;
+                        <?php next_post_link('%link','Next Blog Post &raquo;');?>
+                    </p><!--.links-->
                 </div><!--.copy-->
             <?php endif;?>
         </div><!--.column-1-->
