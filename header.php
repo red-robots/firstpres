@@ -22,4 +22,12 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
+    <div id="hamburger">
+        <div class="wrapper">
+            <i class="fa fa-bars"></i>
+            <div class="menu copy">
+                <?php wp_nav_menu( array( 'theme_location' => 'menu' ) ); ?>
+            </div><!--.menu-->
+        </div><!--.wrapper-->
+    </div><!--.hamburger-->
 	<div id="content" class="site-content wrapper">

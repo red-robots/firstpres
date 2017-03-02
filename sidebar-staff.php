@@ -1,19 +1,19 @@
-<?php $post = get_post( 198 );
+<?php
+$staff = get_field("picker");
+if(!$staff){
+	$staff = array();
+}
+$post = get_post( 198 );
 setup_postdata( $post );
 $view_bio_text = get_field( "view_bio_text" );
 $title         = get_field( "staff_title" );
 wp_reset_postdata();
 $args  = array(
 	'post_type'      => "staff",
+    'post__in'=>$staff,
 	"posts_per_page" => - 1,
 	"order"          => 'ASC',
-	"meta_query"     => array(
-		array(
-			'key'     => 'page_picker',
-			'value'   => '"' . get_the_ID() . '"',
-			'compare' => 'LIKE',
-		),
-	),
+    "orderby" => 'menu_order'
 );
 $query = new WP_Query( $args );
 if ( $query->have_posts() ):?>

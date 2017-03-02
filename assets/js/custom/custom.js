@@ -111,12 +111,19 @@ jQuery(document).ready(function ($) {
 	        width: width,
         });
     });
+    $('#hamburger >.wrapper > i').click(function(){
+        var $hamburger = $('#hamburger');
+        if($hamburger.hasClass('toggled')){
+            $hamburger.removeClass('toggled');
+        } else {
+            $hamburger.addClass('toggled');
+        }
+    });
     if ($('.wrapper.main-menu').length > 0) {
         var $html = $('html');
         var $main_menu = $('.wrapper.main-menu');
         var $main_menu_parent = $main_menu.parent();
-        var $sub_menu = $('.wrapper.sub-menu');
-        var $sub_menu_parent = $sub_menu.parent();
+        var $hamburger = $('#hamburger');
         var $window = $(window);
         $window.on('scroll', check);
         $window.on('resize', check);
@@ -124,61 +131,16 @@ jQuery(document).ready(function ($) {
         function check() {
             var $anchor = $main_menu_parent.offset().top;
             var html_margin = $html.length ? parseFloat($html.css('marginTop')) : 0;
-            if ($anchor <= $window.scrollTop() + html_margin && window.innerWidth > 600) {
-                $main_menu.css({
-                    position: "fixed",
+            if ($anchor <= $window.scrollTop() + html_margin ) {
+                $hamburger.css({
                     top: html_margin+"px",
-                    left: "0",
-                    width: "100%",
-                    padding: "10px 10%",
-                    backgroundColor: "white",
-                    margin: "0",
-                    zIndex: 3
-                });
-                var main_menu_height = parseFloat($main_menu.outerHeight());
-                $main_menu_parent.css({
-                    "height": main_menu_height+"px"
-                });
-                $sub_menu.css({
-                    position: "fixed",
-                    top: html_margin+main_menu_height+"px",
-                    left: "0",
-                    width: "100%",
-                    padding: "10px 10%",
-                    backgroundColor: "#05264d",
-                    margin: "0",
-                    zIndex: 3
-                });
-                $sub_menu_parent.css({
-                    "height": $sub_menu.outerHeight()
+                    display: "block",
                 });
             }
-            if ($anchor > $window.scrollTop() + html_margin || window.innerWidth < 600) {
-                $main_menu.css({
-                    position: "",
+            if ($anchor > $window.scrollTop() + html_margin ) {
+                $hamburger.css({
                     top: "",
-                    left: "",
-                    width: "",
-                    padding: "",
-                    backgroundColor: "",
-                    margin: "",
-                    zIndex: ""
-                });
-                $main_menu_parent.css({
-                    height: ""
-                });
-                $sub_menu.css({
-                    position: "",
-                    top: "",
-                    left: "",
-                    width: "",
-                    padding: "",
-                    backgroundColor: "",
-                    margin: "",
-                    zIndex: ""
-                });
-                $sub_menu_parent.css({
-                    height: ""
+                    display: "",
                 });
             }
         }

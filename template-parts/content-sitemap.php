@@ -20,7 +20,7 @@
             </div><!--.copy-->
         </div><!--.column-1-->
         <div class="column-2">
-	        <?php get_sidebar('staff');?>
+	        <?php get_sidebar('staff-2');?>
         </div><!--.column-2-->
     </div><!--.row-1-->
 </article><!-- #post-## -->

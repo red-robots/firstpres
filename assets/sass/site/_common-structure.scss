@@ -19,6 +19,26 @@
   a {
     text-decoration: none;
     color: $color__first-blue;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: $color__first-dark-blue;
+      visibility: hidden;
+      @include transition(.3s ease all);
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+
+    }
+    &:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
     &:hover {
       color: $color__first-light-blue;
     }
@@ -500,7 +520,50 @@
     }
   }
 }
-
+#hamburger {
+  position: fixed;
+  top: 0;
+  right:0;
+  text-align: center;
+  z-index: 4;
+  display: none;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  &.toggled {
+    text-align: left;
+    >.wrapper {
+      > i {
+      }
+      >.menu.copy {
+        display: block;
+      }
+    }
+  }
+  >.wrapper {
+    background-color: white;
+    padding: 10px;
+    > i {
+      height: 40px;
+      width: 40px;
+      padding: 10px;
+      display: block;
+      font-size: 20px;
+      color: $color__first-dark-blue;
+    }
+    .menu.copy {
+      background-color: $color__first-blue;
+      max-width: 80vw;
+      display: none;
+      padding: 10px;
+      a {
+        color: white;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
 #colorbox.staff-popup {
   .staff-popup {
     background-color: white;
