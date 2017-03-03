@@ -52,7 +52,8 @@
             $title = $sections[$i]['title'];
             $copy = $sections[$i]['copy'];
             $menu_title = $sections[$i]['menu_title'];
-            $image = $sections[$i]['image'];?>
+            $image = $sections[$i]['image'];
+            $link = $sections[$i]['link'];?>
             <a name="<?php echo sanitize_title_with_dashes($menu_title);?>"></a>
             <div class="content-row clear-bottom row-<?php echo $i+4;?>">
 	            <?php if($title):?>
@@ -66,9 +67,15 @@
 		            <?php endif;?>
                 </div><!--.column-1-->
                 <div class="column-2">
+                    <?php if($link):?>
+                        <a href="<?php echo $link;?>">
+                    <?php endif;?>
                     <?php if($image):?>
                         <img src="<?php echo $image['sizes']['large'];?>" alt="<?php echo $image['alt'];?>">
                     <?php endif;?>
+	                <?php if($link):?>
+                        </a>
+	                <?php endif;?>
                 </div><!--.column-2-->
             </div><!--.row-#-->
         <?php endfor;

@@ -25,12 +25,13 @@
         text-align: center;
         .new {
           display: inline-block;
-          margin: 0 20px 0 0;
-          width: 100px;
+          margin: 0;
+          width: 120px;
           text-align: center;
           background-color: $color__first-blue;
           @media screen and (min-width: $tabwidth){
             width: auto;
+            margin: 0 20px 0 0;
           }
           a {
             display: block;
@@ -49,7 +50,7 @@
         .week {
           display: inline-block;
           background-color: $color__first-blue;
-          width: 100px;
+          width: 120px;
           text-align: center;
           @media screen and (min-width: $tabwidth){
             width: auto;
@@ -730,6 +731,10 @@
         width: 35.5%;
         margin: 0 0 0 4.5%;
         float: left;
+      }
+      a {
+        display: block;
+        text-decoration: none;
       }
       img {
         width: 100%;

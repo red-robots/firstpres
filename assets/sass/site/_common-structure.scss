@@ -532,6 +532,7 @@
   &.toggled {
     text-align: left;
     >.wrapper {
+      padding: 10px;
       > i {
       }
       >.menu.copy {
@@ -541,7 +542,7 @@
   }
   >.wrapper {
     background-color: white;
-    padding: 10px;
+    padding: 10px 10px 0 0;
     > i {
       height: 40px;
       width: 40px;
