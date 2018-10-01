@@ -240,4 +240,13 @@ jQuery(document).ready(function ($) {
     $(window).load(function () {
         anchor_scroll_capsule();
     });
+    /*
+    *
+    *   Find the "@" and change the font family
+    *
+    ------------------------------------*/
+    
+    $('.js-at-word').html(function(i, v) {
+        return v.replace(/\s(@)\s/, ' <span class=change-at>$1</span> ');
+    });
 });// END #####################################    END
