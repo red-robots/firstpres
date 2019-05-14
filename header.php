@@ -30,6 +30,15 @@
 
 
 <?php wp_head(); ?>
+	
+	<link rel="apple-touch-icon" sizes="152x152" href="/wp-content/themes/firstpres-new/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/wp-content/themes/firstpres-new/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/wp-content/themes/firstpres-new/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/wp-content/themes/firstpres-new/images/favicons/manifest.json">
+<link rel="mask-icon" href="/wp-content/themes/firstpres-new/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/wp-content/themes/firstpres-new/images/favicons/favicon.ico">
+	
+	
 </head>
 
 <body <?php body_class(); ?>>
